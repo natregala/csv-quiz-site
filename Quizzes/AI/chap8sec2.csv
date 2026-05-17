@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+Which inference rule derives beta given alpha implies beta and alpha?,Modus Ponens|Modus Tollens|Unit Resolution|And-elimination
+Which inference rule derives not alpha given alpha implies beta and not beta?,Modus Tollens|Modus Ponens|Double negative elimination|Or-introduction
+What does the unit resolution rule derive from alpha OR beta and not beta?,alpha|beta|not alpha|not beta
+Which rule infers alpha from alpha AND beta?,And-elimination|And-introduction|Or-introduction|Modus Ponens
+Which rule infers alpha OR beta given only alpha?,Or-introduction|And-introduction|And-elimination|Unit resolution
+What is a Conjunctive Normal Form?,A conjunction of clauses|A disjunction of clauses|A sequence of implications|A nested biconditional
+In a Conjunctive Normal Form what is a clause?,A disjunction of positive or negative literals|A conjunction of positive or negative literals|An implication of literals|A biconditional statement
+What are complementary literals in propositional logic?,One literal is the exact negation of the other|Two literals that are both positive|Two literals that evaluate to true|Literals that imply each other
+The resolution inference rule for propositional logic is known to be what?,Sound and complete|Sound but incomplete|Unsound but complete|Neither sound nor complete
+What proof technique do resolution proofs typically use?,Proof by contradiction|Direct proof|Mathematical induction|Proof by exhaustion
+To prove that a knowledge base entails alpha using resolution what must be assumed?,The knowledge base AND NOT alpha|The knowledge base OR alpha|NOT the knowledge base AND alpha|The knowledge base AND alpha
+During a resolution proof what indicates that a contradiction has been found?,Deriving an empty clause|Deriving a tautology|Running out of clauses|Generating a new unit clause
+Why is the empty clause considered a contradiction?,It is the resolvent of some literal and its negation|It contains only false literals|It violates syntax rules|It means the knowledge base is empty
+What is the first step in converting a sentence to Conjunctive Normal Form?,Replace biconditionals with implications|Replace implications with disjunctions|Move negations inwards|Apply the distributivity law
+When converting to CNF how is an implication alpha implies beta replaced?,NOT alpha OR beta|alpha AND NOT beta|NOT alpha AND NOT beta|alpha OR NOT beta
+Which rules are used to move negations inwards during CNF conversion?,de Morgan rules|Distributivity laws|Commutativity rules|Associativity laws
+What is the final step when converting a sentence to Conjunctive Normal Form?,Apply the distributivity law of OR over AND|Apply de Morgan rules|Eliminate double negations|Replace implications
+Why are inference rules like Modus Ponens useful?,They allow making inferences without model checking every time|They are the only way to represent logic|They automatically convert sentences to CNF|They prevent the need for any knowledge base
+In the resolution algorithm what happens if no new clauses can be added?,The knowledge base does not entail the target sentence|The knowledge base is proven incomplete|A contradiction is successfully derived|The algorithm loops infinitely
+What do we call the set of results obtained from resolving each pair of complementary literals?,Resolvents|Premise sets|Axioms|Tautologies

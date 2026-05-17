@@ -1,0 +1,16 @@
+Question Text,Correct Answer
+What is the fundamental equation for Bayes Rule?,P(AlB) = P(BlA)P(A)/P(B)|P(AlB) = P(A)P(B)/P(BlA)|P(AlB) = P(A AND B)P(B)|P(AlB) = P(A) + P(B)
+Why is Bayes Rule particularly useful in artificial intelligence?,It allows calculating diagnostic probabilities from causal probabilities|It eliminates the need for probabilities|It proves that all events are independent|It converts logical statements to propositional logic
+What principle is used to find the marginal probability of an event by summing over all mutually exclusive and exhaustive cases?,Law of Total Probability|Maximum Expected Utility|Chain Rule|de Morgan Law
+In Bayes Rule what role does the denominator P(B) often serve?,A normalization constant ensuring probabilities sum to exactly one|A random noise factor|A causal multiplier|An independent variable
+What is the main drawback of inference by enumeration using a full joint distribution?,It scales exponentially with the number of variables|It cannot handle mutually exclusive events|It only works for continuous variables|It requires variables to be completely independent
+What does it mean if variables X and Y are conditionally independent given Z?,P(XlY AND Z) equals P(XlZ)|P(XlY) equals P(X)|P(X AND Y) equals 0|P(X) equals P(Y)
+How does conditional independence simplify probabilistic inference?,It dramatically reduces the number of probabilities needed in the model|It guarantees that Bayes Rule is no longer necessary|It ensures all probabilities are exactly one half|It turns full joint distributions into logical entailment
+When comparing the probability of different hypotheses given the same evidence what term can be safely ignored?,The probability of the evidence or normalization constant|The prior probability of the hypothesis|The causal probability of the evidence|The conditional independence factor
+Which term describes the probability P(EffectlCause)?,Causal probability|Diagnostic probability|Prior probability|Marginal probability
+Which term describes the probability P(CauselEffect)?,Diagnostic probability|Causal probability|Joint probability|Independent probability
+How can you rewrite the denominator P(B) in Bayes rule using the Law of Total Probability for a boolean variable A?,P(BlA)P(A) + P(BlNOT A)P(NOT A)|P(B) + P(A)|P(A AND B) * P(B)|P(BlA) + P(AlB)
+What problem arises when using full Bayes Rule with multiple evidence variables without assuming conditional independence?,We need to know the joint conditional probability of all evidence which requires too much data|The probabilities will sum to more than one|The normalization constant becomes zero|The prior probabilities become negative
+What model assumes all effect variables are independent of each other given the cause variable?,Naive Bayes model|Full Joint Distribution model|Propositional model|Horn clause model
+What symbol is typically used to denote the normalization constant in probability equations?,alpha|beta|gamma|omega
+During inference by enumeration what do we do with the hidden variables that are not part of the query or evidence?,We sum them out or marginalize them|We set them to zero|We assign them the maximum probability|We convert them to Skolem constants

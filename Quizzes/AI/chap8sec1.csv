@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+What is a knowledge base in the context of an intelligent agent?,A set of sentences or assertions about the world in a formal language|A database of all possible future states|A collection of past actions|A hardware component for storing memory
+Which function adds a new assertion to the knowledge base?,TELL|ASK|UPDATE|INFER
+In the Wumpus world environment which percept indicates that a square is adjacent to a pit?,Breeze|Stench|Glitter|Scream
+What defines the rules for constructing valid sentences in a formal logic system?,Syntax|Semantics|Entailment|Inference
+Which term describes the meaning of sentences and defines their truth with respect to a model?,Semantics|Syntax|Completeness|Soundness
+What does it mean when a knowledge base entails a sentence?,The sentence is true in all worlds where the knowledge base is true|The sentence can be syntactically derived|The sentence is false whenever the knowledge base is true|The sentence adds new information to the knowledge base
+An inference procedure is sound if it only infers what is entailed. What does this mean?,It produces only true conclusions from true premises|It can produce all possible true conclusions|It never fails to terminate|It runs in polynomial time
+An inference procedure is complete if it can derive what?,All sentences that are entailed by the knowledge base|Only the sentences that are false|A single correct action|The minimal set of axioms
+What property implies that previously entailed sentences cannot be invalidated as more information is added to the knowledge base?,Monotonicity|Satisfiability|Soundness|Equivalence
+How do logicians evaluate the truth or falsity of a sentence?,With respect to a model|By asking the user|Through random sampling|By measuring time complexity
+Which logical connective is used to represent a disjunction?,V|^|=>|<=>
+Which logical connective is used to represent an implication?,=>|<=>|V|^
+What do we call a sentence that is true in all possible models?,Valid or Tautology|Satisfiable|Contradiction|Unsatisfiable
+A sentence is satisfiable if it is true in at least how many models?,One model|All models|No models|Exactly two models
+What do we call a sentence that is true in no model?,Unsatisfiable or Contradiction|Valid|Tautology|Satisfiable
+What algorithm strategy is employed by the Model Checking algorithm to check entailment?,Depth-first enumeration of all models|Breadth-first search|A-star search|Local search
+Two sentences are logically equivalent if and only if they are what?,True in the same models|Written using the same syntax|Entailed by different knowledge bases|Both unsatisfiable
+Which logical rule allows replacing an implication with a disjunction and a negation?,Implication elimination|Contraposition|de Morgan|Biconditional elimination
+Which rule states that the negation of a conjunction is equivalent to the disjunction of the negated components?,de Morgan|Double-negation elimination|Distributivity|Associativity
+For n proposition symbols what is the time complexity of inference by enumeration?,O(2^n)|O(n)|O(n^2)|O(log n)

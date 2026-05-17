@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+The first operand in a Boolean instruction is always changed while the second is only read.,True
+Which flag is UNDEFINED after an AND OR or XOR instruction?,AF|CF|OF|ZF
+Memory-to-memory operations are NOT ___ in 8088 Boolean instructions.,allowed
+What Boolean instruction is most commonly used to perform a selective clear or masking operation?,AND
+The NOT instruction updates the Zero Flag and Sign Flag based on the result.,False
+To SET specific bits in a register to 1 you should use which instruction?,OR|AND|XOR|TEST
+ANDing a bit with 0 ___ that bit to 0.,clears
+What instruction compares each pair of matching bits and results in 1 only if the bits differ?,XOR
+What is the fastest method to zero out a register?,XOR the register with itself|AND the register with zero|OR the register with zero|NOT the register
+To toggle the case of ASCII letters you must flip bit ___ using XOR.,5|five
+The TEST instruction performs a bit-by-bit AND operation but does not store the result in the destination operand.,True
+What operation reverses every single bit in the operand creating a ones complement?,NOT
+What is the critical difference between the NOT and NEG instructions?,NEG performs a twos complement and changes the sign while NOT just flips bits|NOT performs a twos complement while NEG does a ones complement|NEG does not affect flags while NOT updates all flags|NOT is used for arithmetic while NEG is used for masking
+If you want to replace a group of bits with a new value you must first ___ the target bits and then ___ the new value.,AND|OR
+ORing a register with itself changes the data inside the register.,False
+When testing if a register is zero using the TEST instruction what flag state indicates there were no matching bits?,ZF equals 1|ZF equals 0|CF equals 1|OF equals 1
+What hexadecimal mask is used to clear the upper nibble (bits 7 to 4) of an 8-bit register while preserving the lower nibble?,0FH
+When designing an AND mask bits you want to clear should be set to ___ and bits you want to keep unchanged should be set to ___.,0|1
+After executing an XOR instruction the Carry Flag (CF) and Overflow Flag (OF) are always cleared to 0.,True
+If you XOR a bit with 1 what is the guaranteed result?,The bit flips|The bit is cleared to 0|The bit is set to 1|The bit remains unchanged

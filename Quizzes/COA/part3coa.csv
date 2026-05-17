@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+What flag is set when an unsigned overflow occurs meaning a carry out of the most significant bit?,Carry Flag
+Arithmetic instructions modify the Flags Register unlike data movement instructions.,True
+Which of the following flags is updated when the result of an arithmetic operation is exactly zero?,Zero Flag|Sign Flag|Parity Flag|Auxiliary Flag
+The ___ flag is set when the result of an arithmetic operation is negative.,Sign
+Which instruction is used for the upper half of a multi-word subtraction?,SBB|SUB|ADC|ADD
+The instruction ___ adds the source operand to the destination operand and includes the carry flag in the calculation.,ADC
+INC and DEC instructions affect the Carry Flag just like ADD and SUB do.,False
+What flag acts as a borrow flag during the execution of a SUB instruction?,Carry Flag
+How many bits is the maximum register size for the 8088 processor described in the text?,16 bits|8 bits|32 bits|64 bits
+To work with a 32-bit number in a 16-bit architecture you must split it into a ___ word and a ___ word.,LOW|HIGH
+When performing multi-word addition you should always process the lower word first using the ADD instruction.,True
+Which arithmetic instruction calculates destination equals destination minus source?,SUB
+Which flag is set to 1 if a result has an even number of 1-bits?,Parity Flag|Zero Flag|Overflow Flag|Auxiliary Flag
+All number values in the provided text are in ___ form unless stated otherwise.,HEXADECIMAL
+The MUL and IMUL instructions reliably update all six arithmetic flags.,False
+What flag is set when there is a carry from bit 3 to bit 4 during BCD arithmetic?,Auxiliary Flag
+In the example where AX equals 0010H and BX equals 0020H what is the result stored in AX after executing SUB AX BX?,FFF0H|0010H|FFF1H|0030H
+The instruction SBB computes the result by subtracting the source and the ___ from the destination.,Carry Flag
+The Overflow Flag is used to indicate when a signed result is too large or too small for signed interpretation.,True
+What is the final 32-bit result in BX:AX after adding 254F041H and 247892H as detailed in the text example?,027968D3H

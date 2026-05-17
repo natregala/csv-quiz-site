@@ -1,0 +1,11 @@
+Question Text,Correct Answer
+What is a definite clause?,A disjunction with exactly one positive literal|A disjunction with at most one positive literal|A conjunction of negative literals|A disjunction with multiple positive literals
+What is the relationship between Horn clauses and definite clauses?,All definite clauses are Horn clauses|All Horn clauses are definite clauses|They are completely unrelated logical structures|Horn clauses only contain negative literals
+Which logic programming language is based on definite clauses?,Prolog|Lisp|Python|Haskell
+What inference rule do forward and backward chaining rely on?,Modus Ponens|Resolution|Modus Tollens|And-elimination
+What is the core idea behind forward chaining?,Fire any rule whose premises are satisfied and add its conclusion to the knowledge base|Work backwards from the query to find satisfying premises|Resolve all clauses to find an empty clause|Check all possible models exhaustively
+How does the forward chaining algorithm realize that a propositional variable is inferred?,When the count for an implication with that variable as the conclusion goes down to 0|When the variable is added to the agenda queue|When the variable is found in the premise of a Horn clause|When the algorithm reaches the goal variable directly
+Why is forward chaining generally considered less efficient than backward chaining?,Because it infers a lot more variables than are necessary to prove a goal variable|Because its time complexity is exponential|Because it relies on resolution which is NP-complete|Because it cannot be used with Horn clauses
+What is the core idea behind backward chaining?,Work backwards from the query to prove all premises of a rule concluding it|Fire all rules whose premises are satisfied until the goal is reached|Enumerate all models and check if the query holds true|Convert all sentences to Conjunctive Normal Form
+How does backward chaining avoid repeated work?,By checking if a new subgoal is already on the goal stack or has already been evaluated|By caching all possible forward inferences|By using a minimum-remaining-values heuristic|By converting all rules into a single definite clause
+Which approach is described as goal-driven and appropriate for problem-solving?,Backward chaining|Forward chaining|Model checking|Inference by enumeration

@@ -1,0 +1,12 @@
+Question Text,Correct Answer
+"Load BX with the offset address of a 25-byte table using LEA.\ntable DB 25 DUP(?)\n___","LEA BX, table"
+"Load BX with the value of DI using LEA. Given DI = 1000H.\n___  ; BX = 1000H","LEA BX, [DI]"
+"Load CX with the sum of BX and DI using LEA. Given BX=1000H and DI=2000H.\n___  ; CX = 3000H","LEA CX, [BX+DI]"
+"Load BX and DS from a 32-bit far pointer stored at the address in DI.\n___  ; BX = offset portion  DS = segment portion","LDS BX, [DI]"
+"Load DI and ES from a 32-bit far pointer labeled BUFFER before a STOS operation.\nBUFFER DD ?\n___  ; DI = offset  ES = segment","LES DI, BUFFER"
+"Initialize the data segment register in the code segment of the program.\n___\nMOV DS, AX","MOV AX, @DATA"
+"Set up the destination pointer using a far pointer named DST_PTR stored as a DD.\n___  ; ES = segment portion  DI = offset portion","LES DI, DST_PTR"
+"Set up the source pointer using a far pointer named SRC_PTR stored as a DD.\n___  ; DS = segment portion  SI = offset portion","LDS SI, SRC_PTR"
+"Set the loop counter to 5 and clear the direction flag before string movement.\n___\n___","MOV CX, 5|CLD"
+"Execute a repeated byte transfer from DS:SI to ES:DI until CX reaches zero.\n___  ; copies byte from DS:SI to ES:DI  CX--  stops when CX=0","REP MOVSB"
+"5 CHAR STRING DATA TRANSFER \n.MODEL SMALL\n.STACK 100H\n.DATA\n    SRC_PTR DD 07000100H\n    DST_PTR DD 08000200H\n.CODE\nMAIN PROC\n    MOV AX, @DATA\n    MOV DS, AX\n    ___ DI, DST_PTR\n    ___ SI, SRC_PTR\n    MOV CX, ___\n    ___\n    REP ___\n    MOV AH, 4CH\n    INT 21H\nMAIN ENDP\nEND MAIN","LES|LDS|5|CLD|MOVSB"

@@ -1,0 +1,11 @@
+Question Text,Correct Answer
+"Compute (Y * 10 - 245) / (Y + 3A - 25) where Y is a byte at DS:200.\nmov si,200\nmov al,[si]\nmov cl,___\nmul cl\nsub ax,245\nmov bl,[si]\nadd bl,___\nsub bl,25\ndiv bl","10|3a"
+"Clear a 10-byte buffer using word transfers.\nlea di,buffer\nmov cx,___\ncld\nmov ax,0\nrep ___","5|stosw"
+"Copy 100 bytes from list1 to list2 using string instructions.\nlds si,list1\n___ di,list2\ncld\nmov cx,100\nrep ___","les|movsb"
+"Set bits 1 and 0 of DH, clear bits 7 and 6 of DH.\n___ dh,03h\nand dh,___h","or|3f"
+"Compute 5 * 12 and store the result at DS:200.\nmov al,___\nmov cl,12\n___ cl\nmov [200],ax","5|mul"
+"Load the offset address of table[SI] into BX.\n___ bx,table[si]","lea"
+"Save BX and CX to the stack then restore them in correct order.\npush bx\npush cx\npop ___\npop ___","cx|bx"
+"Convert the lowercase letter in AL to uppercase by clearing bit 5.\nand al,___h","df"
+"Zero out AX and use it to test if the result is zero using XOR.\n___ ax,ax\njz ___","xor|exit"
+"Perform a 16-bit division of DX:AX by the value in CX. AX holds the quotient and DX holds the ___.\n___ cx","remainder|div"

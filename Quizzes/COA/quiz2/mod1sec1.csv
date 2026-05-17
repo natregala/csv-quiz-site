@@ -1,0 +1,16 @@
+Question Text,Correct Answer
+What process takes a high-level source code and converts it into machine language instructions?,compiling|linking|assembling|interpreting
+In low-level programming what process converts each line of assembly language to a single machine code instruction?,assembling|linking|compiling|executing
+What is the purpose of the linker in low-level programming?,to generate the final application|to convert source code to machine code|to reserve stack memory|to define the data segment
+Which field in an assembly line identifies a specific line of code or memory location?,label field|opcode field|operand field|comment field
+What does the instruction or opcode field contain in an assembly language program?,an assembly language command|data needed for execution|a memory location reference|optional documentation
+Which assembly line field holds data like an address register or constant?,operand field|label field|opcode field|comment field
+Which field in a line of assembly language is considered optional?,comment field|label field|instruction field|operand field
+What does the directive .MODEL SMALL tell the compiler?,use one code segment and one data segment up to 64K each|use unlimited memory segments|use only 256 bytes for the entire program|use 64K for stack memory only
+How many bytes does the directive .STACK 100H reserve for the stack?,256 bytes|100 bytes|64 bytes|1024 bytes
+Which directive denotes the beginning of the data segment in TASM?,.DATA|.CODE|.MODEL|.STACK
+Where is all the code defined in a basic 8088 assembly program skeleton?,after the .CODE directive|before the .DATA directive|inside the .STACK directive|above the .MODEL directive
+Which string tells the compiler to use a specific memory model suited for small programs?,.MODEL SMALL|.STACK 100H|.DATA|.CODE
+In high-level languages what is created after the compiler processes the source code?,an object file|a final application|an assembler directive|a label field
+What is the second step in the two-step process to produce an application from assembly source code?,linking|assembling|compiling|executing
+Which assembly language directive indicates where the program variables are defined?,.DATA|.CODE|.STACK|.MODEL

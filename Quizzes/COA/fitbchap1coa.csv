@@ -1,0 +1,40 @@
+Question Text,Correct Answer
+Define an uninitialized single byte named VAR02.\n___,VAR02 DB ?
+Define a 5-byte string named STR01 containing hello.\n___,STR01 DB 'hello'
+Allocate 4 uninitialized bytes named ARR02 using DUP.\n___,ARR02 DB 4 DUP(?)
+Allocate 4 words all initialized to zero named ARR03.\n___,ARR03 DW 4 DUP(0)
+Define a 16-bit counter named COUNTER starting at 0.\n___,COUNTER DW 0
+Define a 32-bit far pointer named FARPTR leaving it uninitialized.\n___,FARPTR DD ?
+Define a doubleword integer BIGNUM initialized to hex 12345678.\n___,BIGNUM DD 12345678H
+Assign the symbolic name COUNT to the value 12.\n___,COUNT EQU 12
+Make SPEED an alias for RATE using Equate.\n___,SPEED EQU RATE
+Set DSPEED to the evaluated expression of 2 times 60.\n___,DSPEED EQU 2*60
+Mark the beginning of the data segment.\n___,.DATA
+Clear the direction flag to auto-increment.\n___,CLD
+Set the direction flag to auto-decrement.\n___,STD
+Push the 16-bit accumulator register onto the stack.\n___,PUSH AX
+Push the flags register onto the stack.\n___,PUSHF
+Pop a word off the stack into the base register.\n___,POP BX
+Pop the flags register from the stack.\n___,POPF
+Push the data segment register onto the stack.\n___,PUSH DS
+Save AX then BX then CX to the stack.\n___\n___\n___,PUSH AX|PUSH BX|PUSH CX
+Restore CX then BX then AX from the stack.\n___\n___\n___,POP CX|POP BX|POP AX
+Load a string byte from the data segment into AL and auto-adjust SI.\n___,LODSB
+Load a string word from the data segment into AX and auto-adjust SI.\n___,LODSW
+Store the byte in AL into the extra segment and auto-adjust DI.\n___,STOSB
+Store the word in AX into the extra segment and auto-adjust DI.\n___,STOSW
+Copy a byte from the source index to the destination index and auto-adjust both.\n___,MOVSB
+Copy a word from the source index to the destination index and auto-adjust both.\n___,MOVSW
+Repeat the string byte copy instruction until CX reaches zero.\n___,REP MOVSB
+Repeat the string word store instruction until CX reaches zero.\n___,REP STOSW
+Advance the destination pointer manually by 1 byte.\n___,INC DI
+Advance the source pointer manually by 1 byte.\n___,INC SI
+Loop back to label L20 decrementing CX automatically.\n___,LOOP L20
+Return from a subroutine.\n___,RET
+Define a 64-bit quadword named BIG initialized to zero.\n___,BIG DQ 0
+Clear the direction flag then repeat store byte.\n___\n___,CLD|REP STOSB
+Repeat string word store to clear a buffer quickly.\n___\n___,CLD|REP STOSW
+Push flags then push AX then pop AX then pop flags.\n___\n___\n___\n___,PUSHF|PUSH AX|POP AX|POPF
+Load a byte into AL then store it into memory via ES:DI manually.\n___\n___,LODSB|STOSB
+Define the screen width as 80 and height as 25 using Equate.\n___\n___,COLS EQU 80|ROWS EQU 25
+At label L20: Load string byte then increment DI manually then loop to L20.\nL20:\n___\n___\n___,LODSB|INC DI|LOOP L20

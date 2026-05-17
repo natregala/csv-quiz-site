@@ -1,0 +1,16 @@
+Question Text,Correct Answer
+What does First-Order Logic assume the world contains unlike Propositional Logic?,Objects relations and functions|Only atomic facts|Only Boolean variables|Only true and false states
+In the syntax of First-Order Logic what do constants represent?,Specific objects|Variables|Relations between items|Functions mapping to objects
+Which basic element of First-Order Logic takes arguments and evaluates to true or false?,Predicates|Functions|Constants|Variables
+What is the role of a function in First-Order Logic?,It takes arguments and maps to exactly one object|It takes arguments and evaluates to true or false|It connects two sentences together|It quantifies over a variable
+How is an atomic sentence constructed in First-Order Logic?,By applying a predicate to a sequence of terms|By combining two complex sentences|By using a universal quantifier|By negating a complex sentence
+How are complex sentences formed from atomic sentences?,By using logical connectives|By applying functions to predicates|By adding more objects to the model|By removing variables
+In First-Order Logic what determines the truth of sentences?,A model and an interpretation|The syntax alone|The time complexity of the inference|The number of variables
+What does the universal quantifier represent?,The sentence is true for all objects in the domain|There exists at least one object that makes the sentence true|The sentence is false for all objects|The sentence is true for exactly one object
+A universally quantified sentence is logically equivalent to what type of proposition?,A conjunction of instantiations|A disjunction of instantiations|A single atomic fact|A tautology
+What does the existential quantifier represent?,There is at least one object that makes the sentence true|The sentence is true for all objects|The sentence is true for exactly two objects|The sentence is false for all objects
+An existentially quantified sentence is logically equivalent to what type of proposition?,A disjunction of instantiations|A conjunction of instantiations|A logical implication|A biconditional statement
+Which statement about nested quantifiers is true?,The order of different quantifiers matters|The order of different quantifiers never matters|Universal quantifiers cannot be nested|Existential quantifiers cannot be nested
+The negation of a universally quantified sentence is equivalent to what?,An existentially quantified negated sentence|A universally quantified negated sentence|An unquantified atomic sentence|A conjunction of positive literals
+What is equivalent to saying that there does not exist an object with a certain property?,For all objects they do not have the property|For some objects they do not have the property|For all objects they have the property|For some objects they have the property
+When is the equality relation true under a given interpretation?,When both terms refer to the exact same object|When both terms are variables|When both terms are functions|When both terms evaluate to true

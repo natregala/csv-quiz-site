@@ -1,0 +1,632 @@
+/* --- CSS STYLES --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f6;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.input-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#action-btn {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+
+#action-btn:hover {
+    background-color: #218838;
+}
+
+.question-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.option-label {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option-label:hover {
+    background-color: #e9ecef;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* The final score alert box */
+#score-display {
+    display: none;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-section {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-box {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.copy-btn {
+    background: #007bff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    width: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.copy-btn:hover {
+    background: #0056b3;
+}
+
+/* Quiz type selector */
+.quiz-type-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.type-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.type-option:hover {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+}
+
+.type-option.selected {
+    border-color: #007bff;
+    background-color: #e7f1ff;
+    color: #007bff;
+}
+
+.type-option input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Difficulty selector */
+.difficulty-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.diff-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+}
+
+.diff-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.diff-label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.diff-desc {
+    font-size: 0.78rem;
+    color: #777;
+}
+
+.diff-option:hover {
+    border-color: #aaa;
+    background-color: #f8f9fa;
+}
+
+.diff-option.selected[data-diff="easy"] {
+    border-color: #28a745;
+    background-color: #e8f5e9;
+}
+.diff-option.selected[data-diff="easy"] .diff-label { color: #28a745; }
+.diff-option.selected[data-diff="easy"] .diff-desc { color: #2e7d32; }
+
+.diff-option.selected[data-diff="medium"] {
+    border-color: #ff9800;
+    background-color: #fff3e0;
+}
+.diff-option.selected[data-diff="medium"] .diff-label { color: #e65100; }
+.diff-option.selected[data-diff="medium"] .diff-desc { color: #bf360c; }
+
+.diff-option.selected[data-diff="hard"] {
+    border-color: #dc3545;
+    background-color: #fce4ec;
+}
+.diff-option.selected[data-diff="hard"] .diff-label { color: #dc3545; }
+.diff-option.selected[data-diff="hard"] .diff-desc { color: #b71c1c; }
+
+.diff-option.selected[data-diff="extreme"] {
+    border-color: #7b1fa2;
+    background-color: #f3e5f5;
+}
+.diff-option.selected[data-diff="extreme"] .diff-label { color: #7b1fa2; }
+.diff-option.selected[data-diff="extreme"] .diff-desc { color: #4a148c; }
+
+/* Identification input */
+.identification-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: border-color 0.2s;
+}
+
+.identification-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.identification-input:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+/* Quiz navigation bar */
+.quiz-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.progress-indicator {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: right;
+    flex: 1;
+}
+
+/* Action bar with prev / submit / next */
+.quiz-action-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.quiz-action-bar #action-btn {
+    flex: 2;
+}
+
+/* Navigation buttons (prev, next, home) */
+.nav-btn {
+    flex: 1;
+    background-color: #6c757d;
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #545b62;
+}
+
+.nav-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.home-btn {
+    background-color: #dc3545;
+    flex: none;
+    width: auto;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.home-btn:hover {
+    background-color: #c82333;
+}
+
+/* Review section at end of quiz */
+.review-section {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.review-title {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.review-card {
+    background: #fff;
+    border-left: 4px solid #dc3545;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.review-question {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.review-answers {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.review-your {
+    color: #dc3545;
+}
+
+.review-correct {
+    color: #28a745;
+}
+
+.review-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.review-tag.wrong {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.review-tag.close {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+/* Save CSV Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.25s ease;
+    text-align: center;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-box h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.modal-box p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.modal-input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.modal-input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.modal-filename-row {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.modal-filename-row:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.modal-filename-row input {
+    flex: 1;
+    border: none;
+    padding: 10px 12px;
+    font-size: 1rem;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.file-ext {
+    background: #e9ecef;
+    padding: 10px 14px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95rem;
+    border-left: 1px solid #ddd;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.modal-btn:active {
+    transform: scale(0.97);
+}
+
+.modal-btn.save {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.modal-btn.save:hover {
+    background-color: #218838;
+}
+
+.modal-btn.skip {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.modal-btn.skip:hover {
+    background-color: #545b62;
+}
+
+/* ===========================
+   Fill in the Blanks styles
+   =========================== */
+
+/* Question text with inline inputs — needs extra line-height for inputs */
+.fitb-question {
+    line-height: 2.4;
+}
+
+/* Inline blank input embedded in the question sentence */
+.fitb-inline-input {
+    display: inline-block;
+    width: 110px;
+    padding: 4px 8px;
+    border: none;
+    border-bottom: 3px solid #f0ad4e;
+    background: #fff9e6;
+    border-radius: 4px 4px 0 0;
+    font-size: 0.95em;
+    font-family: inherit;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+.fitb-inline-input:focus {
+    border-bottom-color: #007bff;
+    box-shadow: 0 2px 0 rgba(0, 123, 255, 0.3);
+    background: #f0f8ff;
+}
+
+.fitb-inline-input:disabled {
+    background: #f8f9fa;
+    color: #555;
+    cursor: not-allowed;
+    border-bottom-color: #ccc;
+}
+
+/* Blank highlight in the review section */
+.fitb-blank-review {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #0d47a1;
+    border-radius: 4px;
+    padding: 0 6px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 2px;
+}
+
+/* Code-style question block (rendered when question text has line breaks) */
+.fitb-code-question {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    font-family: 'Courier New', Consolas, 'Fira Code', monospace;
+    font-size: 0.92rem;
+    line-height: 2.0;
+    padding: 18px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #89b4fa;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+    margin-bottom: 0;
+}
+
+/* Inline inputs inside code blocks — tighter, monospace */
+.fitb-inline-input--code {
+    font-family: 'Courier New', Consolas, 'Fira Code', monospace;
+    font-size: 0.9em;
+    width: 130px;
+    background: #313244;
+    color: #a6e3a1;
+    border-bottom-color: #a6e3a1;
+    border-radius: 3px 3px 0 0;
+}
+
+.fitb-inline-input--code:focus {
+    background: #3a3a55;
+    border-bottom-color: #89b4fa;
+    box-shadow: 0 2px 0 rgba(137, 180, 250, 0.4);
+}
+
+.fitb-inline-input--code:disabled {
+    background: #2a2a3e;
+    color: #a6adc8;
+    border-bottom-color: #585b70;
+}
+
+/* Compact variant for review cards */
+.fitb-code-review {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 12px 16px;
+    margin-top: 6px;
+}

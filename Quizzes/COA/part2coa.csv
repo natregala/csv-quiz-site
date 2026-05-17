@@ -1,0 +1,41 @@
+Question Text,Correct Answer
+"The MOV instruction is used to copy data from a source to a destination modifying both the source and the destination in the process.",False
+"What is the only practical way to do a direct memory-to-memory data transfer in the 8088 using string instructions?",MOVS
+The POP instruction removes ___ bytes from the top of the stack and places them into the target.,2|two
+What string instruction loads data from memory at DS:SI into the AL or AX register?,LODS|LODSB|LODSW|LODS BYTE|LODS WORD
+The stack grows DOWNWARD in memory meaning the Stack Pointer (SP) decreases as data is pushed.,True
+"What prefix placed before a string instruction causes it to repeat automatically decrementing CX by 1 each time until CX reaches 0?",REP
+The direction flag controls whether the SI and DI registers auto-increment or auto-decrement after string operations.,True
+The ___ instruction atomically swaps the contents of two operands without the need for a temporary register.,XCHG
+"Which of the following is an ILLEGAL use of the MOV instruction?",MOV [200] [100]|MOV AX BX|MOV AL 12|MOV DS AX
+"If you want to clear a 10-byte buffer quickly using REP STOSW what should the value of the CX register be?",5
+What instruction loads a 32-bit far pointer with the offset going into the specified register and the segment going into DS?,LDS
+It is legal to directly move a constant value into a segment register using the MOV instruction.,False
+"The MOVS instruction copies data from a source memory location pointed to by DS:SI to a destination pointed to by ___.",ES:DI
+"What instruction loads the offset address into a register AND the segment into ES?",LES
+"Before using any string instruction you must explicitly set the Direction Flag with CLD or STD.",True
+"Which instruction simply loads an offset address into a register without modifying any segment registers?",LEA
+"When using the PUSH instruction to store data on the stack the Stack Pointer (SP) is incremented by 2.",False
+"What is the destination register for the STOSB string instruction?",ES:DI|AX|AL|DS:SI
+You cannot use a memory-to-memory transfer with the XCHG instruction.,True
+"In an assembly subroutine what is the correct order to restore registers that were saved using PUSH?",In the reverse order of the PUSHes (LIFO).|In the exact same order as the PUSHes.|In alphabetical order of the register names.|The order does not matter as long as all registers are popped.
+"What string instruction is best suited for clearing a buffer by storing the contents of AL or AX into memory?",STOS|STOSB|STOSW|STOS BYTE|STOS WORD
+"The LEA instruction evaluates the address expression and stores the result in a register taking ___ clock cycles.",8|eight
+The POP CS instruction is completely legal and frequently used to change the code segment.,False
+"What value does the D flag hold when auto-increment mode is active?",0|zero
+"When using LEA BX table over MOV BX OFFSET table for simple labels MOV is generally preferred because it takes fewer clock cycles.",True
+"If AX contains 6AB3H and SP is 0800H what is the new value of SP after executing PUSH AX?",07FEH
+"The LODS instruction automatically adjusts the ___ register after loading data into AL or AX.",SI
+The first operand in a MOV instruction specifies the source where the data comes from.,False
+"What string instruction does not require an intermediate register to copy data directly from one memory area to another?",MOVS|MOVSB|MOVSW|MOVS BYTE1 BYTE2
+"When executing REP MOVSB the loop stops immediately if the CX register evaluates to ___.",0|zero
+"A memory-to-memory transfer using MOV requires two instructions because the 8088 bus can only perform one memory access per bus cycle.",True
+What is the primary function of the XCHG instruction?,To swap the contents of two operands.|To clear the contents of a register.|To load an effective address.|To push data onto the stack.
+"If the Direction Flag is set (D = 1) what happens to the SI and DI registers after a string operation?",They auto-decrement.
+"Which instruction clears the Direction Flag setting it to 0 for auto-increment operations?",CLD
+It is considered good practice to always use byte transfers (STOSB) instead of word transfers (STOSW) even when the buffer size is even.,False
+"The LODSW instruction transfers a word from memory to the ___ register.",AX
+"What is the fastest way to swap the values of two 16-bit registers?",XCHG AX BX|MOV TMP AX then MOV AX BX then MOV BX TMP|PUSH AX then PUSH BX then POP AX then POP BX|LEA AX [BX]
+"The top of the stack is always located at the memory address determined by combining the Stack Segment (SS) and the ___.",Stack Pointer|SP
+"The LES instruction is particularly useful for loading a pointer before using string instructions like STOS or MOVS.",True
+"What happens to the CX register during each repetition of a string instruction prefixed with REP?", decremented by 1

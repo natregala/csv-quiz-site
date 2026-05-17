@@ -1,0 +1,16 @@
+Question Text,Correct Answer
+What are the contents of a First-Order Logic knowledge base?,Axioms definitions and theorems|Only true facts|Only boolean variables|Only existential quantifiers
+What is the process of systematically creating a First-Order Logic knowledge base called?,Knowledge engineering|Model checking|Forward chaining|Resolution
+What is the first step in the knowledge engineering process?,Identify the task|Decide on a vocabulary|Pose queries to the inference procedure|Debug the knowledge base
+Why is deciding on a vocabulary for the knowledge base critically important?,It forms the ontology that dictates how knowledge is represented|It determines the execution time of the inference engine|It allows the system to skip the debugging phase|It automatically translates English to logic
+What do we call the process of translating domain concepts into formal logic predicates and functions?,Deciding on a vocabulary|Assembling the relevant knowledge|Identifying the task|Posing queries
+After knowledge engineering is the knowledge base fixed and unchangeable?,False it can be debugged and modified|True it is permanently compiled|True to prevent logical contradictions|False but only variables can be added
+What is the purpose of encoding general knowledge about the domain?,To write down the axioms for all vocabulary terms|To solve specific instances of a problem|To execute the inference procedure|To identify the goal of the agent
+What happens during the step of encoding a description of the specific problem instance?,The agent writes atomic sentences about the current environment|The agent defines the general rules of physics|The agent creates new predicates for the ontology|The agent halts the inference engine
+What do you do when the inference procedure returns an incorrect answer?,Debug the knowledge base|Restart the computer|Delete the entire ontology|Change the task definition
+In knowledge engineering what is an ontology?,A particular theory of the nature of being or existence in the domain|A fast inference algorithm|A type of logical contradiction|A hardware component for storing axioms
+Which step involves gathering unformalized facts and rules about the domain?,Assemble the relevant knowledge|Pose queries to the inference procedure|Encode the specific problem instance|Debug the knowledge base
+How does the agent discover the solution to a problem using the knowledge base?,By posing queries to the inference procedure|By printing all axioms to the screen|By randomly guessing vocabulary terms|By deleting old data
+What kind of sentences are typically used to encode a specific problem instance?,Atomic sentences with constant symbols|Universally quantified implications|Complex biconditional statements|Nested existential quantifiers
+What does it mean to debug a knowledge base?,To find and fix missing axioms or incorrect representations|To rewrite the inference algorithm in a different language|To remove hardware errors from the agent sensors|To increase the memory capacity of the agent
+Which role is responsible for investigating a domain and building the logic formulas?,Knowledge engineer|Inference engine|Domain expert|Hardware technician

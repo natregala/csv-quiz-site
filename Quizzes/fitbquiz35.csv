@@ -1,0 +1,71 @@
+Question Text,Correct Answer
+
+"Copy the contents of BL into AL using register addressing.\n___ AL,BL",MOV
+
+"Place the hex value 67D1 in AX using immediate addressing.\nMOV AX,___H",67D1
+
+"Load the word at memory offset ___ into AX using direct addressing.\nMOV AX,[500]",500
+
+"Iterate through a table using register indirect addressing.\nMOV BX,OFFSET tbl\nMOV AL,[___]\nINC BX\nMOV AL,[BX]",BX
+
+"Given BX=100h and DI=30h, DS=100h. The physical address accessed by MOV CX,[BX+DI] is ___H.",1130
+
+"Move array element 10h into array element 20h using register relative addressing.\nMOV DI,10h\nMOV AL,array[DI]\nMOV DI,___\nMOV ___[DI],AL",20h|array
+
+"Copy element 0 of recordA into element 2 of recordB.\nMOV BX,OFFSET recordA\nMOV DI,___\nMOV AL,file[BX+DI]\nMOV BX,OFFSET recordB\nMOV DI,2\nMOV file[___+DI],AL",0|BX
+
+"Load the effective address of [BX+DI] into CX. If BX=1000H and DI=2000H, CX = ___H.\nLEA CX,[BX+DI]",3000
+
+"The instruction ___ BX,[DI] loads BX with the offset and DS with the segment from a 32-bit pointer at [DI].",LDS
+
+"Push the flag register then push DS onto the stack.\n___\n___ DS",PUSHF|PUSH
+
+"Restore BX and CX in correct LIFO order after pushing them.\nPUSH BX\nPUSH CX\nPOP ___\nPOP ___",CX|BX
+
+"Copy 5 bytes from str1 to str2 using LODSB.\nCLD\nMOV CX,5\nLEA SI,str1\nLEA DI,str2\nL20: ___\nMOV [DI],AL\nINC DI\nLOOP L20",LODSB
+
+"Clear a 10-byte buffer using word transfers. ___ words are needed to cover 10 bytes.\nLEA DI,buffer\nMOV CX,___\nCLD\nMOV AX,0\nREP STOSW",5|5
+
+"Copy 100 bytes from list1 to list2 using MOVSB.\n___ SI,list1\n___ DI,list2\nCLD\nMOV CX,100\nREP MOVSB",LDS|LES
+
+"Swap the contents of AX and BX using a single instruction.\n___ AX,BX",XCHG
+
+"Read a byte from port 19H into AL then send it back out to the same port.\nIN AL,___H\n___ 19H,AL",19|OUT
+
+"Use ___ to convert a BCD digit in AL to its 7-segment code. BX must point to the lookup table.\nMOV BX,OFFSET TABLE\n___",XLAT|XLAT
+
+"Mask the upper 4 bits of BL to zero using AND. BL = 0011 1010.\nAND BL,___H",0F
+
+"Clear the 3 leftmost bits (bits 7,6,5) of DH using a single AND instruction.\nAND DH,___H",1F
+
+"Set bits 0 and 1 of DI then test if DX is zero and jump to exit if so.\nOR DI,0003H\n___ DX,DX\nJZ ___",OR|exit
+
+"Complement all bits of BL using XOR, then zero it out using the same instruction.\nXOR BL,0FFH\n___ ___,___",XOR|BL|BL
+
+"Toggle bit 5 of AH to convert an uppercase letter to lowercase.\nXOR AH,___B",00100000
+
+"Complement bits 6 through 10 of AX using a single XOR instruction.\nXOR AX,___H",07C0
+
+"Test if BL is an odd number by checking bit 0. Jump to exit if it is odd.\nTEST BL,00000001B\n___ exit",JNZ
+
+"Test if any of the 4 leftmost bits of CL are nonzero then jump if so.\nTEST CL,___B\nJNZ exit",11110000
+
+"Reverse all bits of BL using a single instruction that does not affect any flags.\n___ BL",NOT
+
+"Clear bits 7,6,5 of DH using a single instruction.\n___ DH,1FH",AND
+
+"Set the 2 rightmost bits of DI using a single instruction.\n___ DI,0003H",OR
+
+"Set bits 11 and 12, clear bits 3,4,5, and complement bits 6-10 of AX using three instructions.\n___ AX,1800H\n___ AX,0FFC7H\n___ AX,07C0H",OR|AND|XOR
+
+"Change the 6 middle bits of CX to 110011 using AND then OR.\nAND CX,___H\nOR CX,___H",F81F|0660
+
+"Compute 5 x 10 and store the result at DS:200.\nMOV AL,5\nMOV CL,___\n___ CL\nMOV [200],AX",10|MUL
+
+"Compute W + 5X + 3Y. X at DS:200 (byte), Y at DS:210 (byte), W at DS:220 (word).\nMOV AL,[200]\nMOV CL,5\nMUL CL\nMOV BX,AX\nMOV AL,[210]\nMOV CL,___\n___ CL\nADD AX,BX\nADD AX,[220]",3|MUL
+
+"Perform unsigned 8-bit division: 12 / 3. The quotient is stored in ___ and the remainder in ___.\nMOV AX,12\nMOV CL,3\nDIV CL",AL|AH
+
+"Perform unsigned 16-bit division: 4010 / 1000. Sign-extend AX before dividing.\nMOV AX,4010\n___\nMOV CX,1000\n___ CX",CWD|DIV
+
+"Convert AH from uppercase to lowercase by setting bit 5, then back to uppercase by clearing bit 5.\n___ AH,20H\n___ AH,0DFH",OR|AND

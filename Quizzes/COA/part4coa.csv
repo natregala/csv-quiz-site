@@ -1,0 +1,26 @@
+Question Text,Correct Answer
+"The INC instruction affects the Carry Flag (CF).",False
+"Which instruction adds 1 to the operand without affecting the Carry Flag?",INC|ADD|ADC|MUL
+"What is the result size when multiplying two 16-bit numbers using the MUL instruction?",32 bits|16 bits|8 bits|64 bits
+"The instruction ___ is used for signed multiplication treating operands as two's complement signed values.",IMUL
+"You can write immediate multiplication instructions like MUL 5 directly in assembly.",False
+"In an 8-bit multiplication (MUL CL) where is the 16-bit product stored?",AX|BX|CX|DX
+"The ___ instruction is used for unsigned division of a double-width dividend by a single-width divisor.",DIV
+"For 16-bit division where must the 32-bit dividend be placed before executing DIV?",DX:AX|AX|BX:CX|SI:DI
+"The CWD instruction sign-extends AX into DX:AX by copying the MSB of AX into all 16 bits of DX.",True
+"When dividing using IDIV the sign of the remainder always matches the sign of the ___.",dividend
+"In an 8-bit division using DIV CL where is the quotient stored?",AL|AH|CL|CH
+"What happens to the Carry Flag (CF) when using the DEC instruction inside a loop?",It is not affected.|It is set to 1.|It is cleared to 0.|It toggles its value.
+"When using INC or DEC with a memory operand like [BX] you must use the ___ keyword (e.g. BYTE PTR) to resolve size ambiguity.",PTR
+"Only CF and OF are meaningful after MUL/IMUL; all other flags are unpredictable.",True
+"If CF = OF = 0 after a multiplication operation what does this indicate?",The upper half of the result is zero.|The result is negative.|An overflow error occurred.|The result requires both halves to be represented.
+"To divide a 16-bit value in AX by an 8-bit divisor what must you do if the dividend fits entirely in AL?",Set AH = 0|Sign-extend AX using CWD|Set AL = 0|Use IDIV instead of DIV
+"Which registers hold the 32-bit product after a 16-bit multiplication using MUL CX?",DX (high) and AX (low)|AX (high) and DX (low)|CX (high) and BX (low)|SI (high) and DI (low)
+"The DEC instruction adds 1 to its operand.",False
+"In 16-bit division (DIV CX) where is the remainder stored?",DX|AX|CX|BX
+"When calculating (W + 5X + 3Y) why must you use a register (like CL) to hold the multiplier 5 instead of writing MUL 5?",There is no immediate multiplication instruction.|It is faster to load registers.|MUL only accepts 16-bit immediate values.|The syntax requires memory operands only.
+"To perform unsigned division when your 16-bit dividend is already in AX you must simply clear ___ to 0 before calling DIV.",DX
+"The DIV and IDIV instructions always divide a single-width dividend by a single-width divisor.",False
+"What instruction subtracts 1 from the operand without affecting the Carry Flag?",DEC|SUB|SBB|DIV
+"In a signed 8-bit division (IDIV BL) the quotient is stored in AL and the remainder is stored in ___.",AH
+"Which flags are affected by the INC and DEC instructions?",ZF AF SF PF OF|ZF CF SF PF OF|Only CF and OF|All flags are affected

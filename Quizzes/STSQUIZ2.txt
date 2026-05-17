@@ -1,0 +1,118 @@
+Question Text,Correct Answer
+What landmark achievement represents early Filipino engineering and agricultural science during the pre-colonial period?,Banaue Rice Terraces
+What early systems were developed and used for trading during the pre-colonial period?,Writing and measurement systems
+What replaced the Laboratorio Municipal during the American occupation?,Bureau of Government Laboratories
+In what year was the National Research Council of the Philippines (NRCP) established?,1933
+What agency replaced the Bureau of Science in 1946?,Institute of Science
+Which Philippine president mandated DepEd to promote science courses in public high schools?,Ferdinand Marcos
+Under whose administration was the National Science and Technology Authority renamed DOST?,Corazon Aquino
+Who created the Doctor to the Barrio program?,Fidel Ramos
+Which president signed the Clean Air Act of 1999?,Joseph Estrada
+What initiative did Gloria Macapagal-Arroyo launch to make the Philippines an innovation hub?,Filipinnovation
+Which president recognized National Scientists like Gavino C. Trono and Angel C. Alcala?,Benigno Aquino III
+Under which administration were the Diwata-1 and Diwata-2 microsatellites deployed?,Rodrigo Duterte
+What does the acronym PAGASA stand for?,Philippine Atmospheric Geophysical and Astronomical Services Administration
+What does NAST stand for?,National Academy of Science and Technology
+Who invented the SALT Lamp?,Aisa Mijeno
+How is the SALT Lamp powered?,Saltwater
+What is the tricycle capable of traversing both land and water useful during floods?,Salamander Amphibious Tricycle
+Who invented the Salamander Amphibious Tricycle?,Atoy Llave
+Who designed a bamboo-based medical incubator for premature infants?,Dr. Fe del Mundo
+What trap is used for dengue prevention by targeting mosquito eggs and larvae?,Mosquito Ovicidal/Larvicidal Trap
+Who discovered the antibiotic Erythromycin?,Abelardo Aguilar
+Who invented the mole remover?,Rolando Dela Cruz
+What natural ingredient is the mole remover Dewart derived from?,Annacardium occidentale
+Who invented Banana Ketchup?,Maria Orosa
+What Filipino cultural symbol was created by repurposing American jeeps post-WWII?,Jeepney
+What is one adverse environmental impact of S&T?,Depletion of natural resources
+What is Martin Heidegger's reference work regarding technology?,The Question Concerning Technology
+What definition describes technology as a means to an end?,Instrumental definition
+What definition describes technology as a human activity focused on tools and machines?,Anthropological definition
+Did Heidegger believe his two definitions capture the true essence of technology?,No
+How did Heidegger view the true essence of technology?,Way of revealing
+What does modern technology extract and order nature to be according to Heidegger?,Standing-reserve
+What is modern technology's primary tool according to Heidegger?,Humans
+What is the term for when modern technology challenges humans to impose order on nature?,Enframing
+What is the desire to put an order to nature characteristic of modern technological thinking called?,Calculative Thinking
+What type of thinking allows nature to reveal itself in a reflective open mode?,Meditative Thinking
+What analogy describes technology as a symbol of power with an ever-present threat?,Sword of Damocles
+What is the process that produces identical copies of DNA for cell division?,DNA Replication
+What process creates an mRNA copy of a gene's sequence?,Transcription
+What process do ribosomes use to read mRNA and synthesize proteins?,Translation
+What is the process of turning RNA into DNA used by retroviruses?,Reverse Transcription
+What field studies the DNA sequence organization function and evolution of genes?,Genomics
+What field aims to identify all proteins in a cell or organism?,Proteomics
+Drying and fermentation are examples of what type of biotechnology?,Traditional Biotechnology
+What are organisms whose genetic material has been artificially manipulated in a laboratory called?,GMOs
+Why are GMOs also called transgenic organisms?,Transfer of genes
+Who were the first scientists to create a GMO?,Herbert Boyer and Stanley Cohen
+What was the first GMO approved by the FDA used to produce insulin?,Humulin
+What is the first FDA-approved GMO tomato for sale in grocery stores?,Flavr Savr Tomato
+What was genetically modified to biosynthesize beta-carotene to address Vitamin A deficiency in Asia?,Golden Rice
+What natural insecticide gene is found in Bt Corn and Bt Potatoes?,Bacillus thuringiensis
+What produces identical copies of an organism?,Cloning
+What does CRISPR stand for?,Clustered Regularly Interspaced Short Palindromic Repeats
+What enzyme acts like molecular scissors in CRISPR technology?,Cas9
+Where do the DNA snippets used in CRISPR originate?,Bacterial DNA
+Name one disease that can be treated by CRISPR.,Cancer
+What field is described as an engineer's approach to biology?,Synthetic Biology
+What type of Covid test detects the virus's genetic material?,RT-PCR
+What type of test detects viral surface proteins?,Antigen test
+What type of test detects antibodies from a past infection?,Antibody Test
+What kind of specimen is needed for a serology test?,Blood sample
+What are portable devices worn on the body to record health data outside a hospital?,Wearable Biosensors
+When was the first IVF baby born?,1978
+Where are fertilized eggs placed before being implanted into the uterus in IVF?,Incubator
+What is a human offspring produced from the genetic material of one man and two women called?,Three-parent baby
+What technology is used to prevent mitochondrial diseases from being passed on by the biological mother?,Mitochondrial Replacement Technology
+What is the scale of matter manipulated in nanotechnology?,100 nanometers
+What is a baby genetically engineered in vitro for specially selected traits called?,Designer baby
+What is the simplest method for selecting genetic traits used since 1988?,Pre-implantation Genetic Diagnosis
+What is a major religious concern associated with cloning?,Playing God
+What Republic Act is known as the Magna Carta for S&T Personnel?,RA 8349
+What provides incentives for Filipino inventors?,RA 7459
+What is the Intellectual Property Code of the Philippines also known as?,RA 8293
+What law promotes mechanization in agriculture and fisheries?,RA 10601
+"What is the literal translation of the word ""philosophy"" based on its Greek root words ""philo"" and ""sophos""?",Love of wisdom
+"In the context of science and its distinct foundations, what foundational basis does the field of mathematics strictly rely on?",Theorems & Axioms
+"According to the different foundations of scientific fields, what is the fundamental basis for the field of physics?",Measurement
+"The scientific field of biology relies on what two fundamental concepts as its foundation?",Structure & Function
+"Which main branch of philosophy is dedicated to dealing with existence, laws, and causation by asking ""What is the nature of REALITY?""?",Metaphysical
+"What specific subdivision of metaphysics is concerned entirely with the nature of existence?",Ontology
+"What specific subdivision of metaphysics studies the origin and organization of the universe?",Cosmology
+"Which main branch of philosophy focuses on how we acquire knowledge, its limits, and asks ""What is the nature of KNOWLEDGE?""?",Epistemology
+"Which main branch of philosophy focuses on the study of moral problems and asks ""What is the nature of VALUES?""?",Axiology / Ethics
+"Within the branch of Axiology, what specific category is defined as the study of human conduct and the examination of moral values?",Ethics
+"Within the branch of Axiology, what specific category focuses on valuing beauty, nature, and the aesthetic experience?",Aesthetics
+"What type of logic, heavily relied upon in Epistemology, uses a formula where a general principle leads to a specific conclusion?",Deductive
+"What type of logic, heavily relied upon in Epistemology, uses a formula where specific facts lead to a general conclusion?",Inductive
+"What specific philosophy of science is built on the core idea that the universe is governed by uniform laws of nature and that ""seeing is believing""?",Inductivism
+"According to Inductivism, scientific knowledge is built from the ground up starting from what specific foundation?",Specific observations
+"What philosophy of science rejects purely observable facts, arguing instead that facts can also come from accidents, dreams, visions, or preexisting theories?",Hypothetico-Deductivism
+"In Hypothetico-Deductivism, what specific term is used to describe how every supporting instance lends support to a hypothesis rather than proving it outright?",Corroboration
+"Whose fossil research comparing the percentages of present-day species in various rock layers serves as the classic example of Hypothetico-Deductivism?",Charles Lyell
+"Which philosophy of science is built on the core idea that no amount of confirmations can make a hypothesis universally true, and that science must be capable of being proven wrong?",Falsificationism
+"Who is the key figure that published ""The Structure of Scientific Revolutions"" in 1962 and argued that science progresses by refuting existing theories?",Thomas Kuhn
+"According to Thomas Kuhn, what is the specific term for a set of shared assumptions and methods that are accepted by the scientific community?",Paradigm
+"What term describes the scientific event that occurs when enough anomalies accumulate, causing an old paradigm to be replaced by a new one?",Paradigm Shift
+"In the cycle of scientific progress, what stage is characterized by scientists working within the accepted paradigm and solving problems using existing frameworks?",Normal Science
+"In the cycle of scientific progress, what stage occurs immediately when problems arise that cannot be explained by the existing paradigm?",Crisis / Anomaly
+"In the cycle of scientific progress, what stage is characterized by old theories being re-analyzed, refuted, and directly challenged?",Revolutionary Science
+"According to the standard steps of the Scientific Method, what specific action immediately follows constructing the hypothesis?",Test the Hypothesis (Experiment)
+"What specific type of data involves numeric variables like ""how many"" or ""how much"" and is collected via lab experiments and closed surveys?",Quantitative Data
+"What specific type of data utilizes categorical variables and provides a deep understanding of social realities and human perception?",Qualitative Data
+"Methods such as diary accounts, focus groups, case studies, and open-ended surveys are used to collect what type of data?",Qualitative Data
+"What assessment concept evaluates the consistency of a method by checking if results can be reproduced under the exact same conditions?",Reliability
+"What assessment concept evaluates the accuracy of a method by checking if it actually measures what it is supposed to measure against established theories?",Validity
+"What specific type of reliability measures consistency across time by ensuring that repeating the experiment yields the same results?",Test-Retest
+"What specific type of reliability measures the consistency across different items within the same test?",Internal Consistency
+"What specific type of reliability measures consistency across different researchers or observers?",Interrater
+"What type of validity measures whether a test looks like it measures the right thing based merely on its initial appearance, such as an IQ test looking like it tests intelligence?",Face Validity
+"What type of validity checks if a test measures the intended theoretical concept rather than other variables?",Construct Validity
+"What type of validity ensures that a measurement tool successfully covers all aspects of the concept being measured?",Content Validity
+"What type of validity ensures that scores are not correlated with variables that are completely distinct?",Discriminant Validity
+"In the CRAAP framework for evaluating sources, what does the ""C"" stand for, which asks when the information was published or last updated?",Currency
+"In the CRAAP framework, what does the ""R"" stand for, which asks if the information is important and whether it relates to your topic or answers your question?",Relevance
+"In the CRAAP test, which criterion asks who the author, publisher, or sponsor of the news is, and whether they are credible and qualified?",Authority
+"In the CRAAP test, what criterion checks if the information is supported by evidence and if the author cites credible sources?",Accuracy
+"In the CRAAP framework, what does the ""P"" stand for, which asks whether the information is meant to inform, sell, entertain, or persuade?",Purpose

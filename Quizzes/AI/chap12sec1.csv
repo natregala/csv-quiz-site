@@ -1,0 +1,16 @@
+Question Text,Correct Answer
+What principle states that an agent should choose the action that maximizes its expected utility?,Maximum Expected Utility|Minimum Expected Cost|Certainty Equivalent|Minimax Theorem
+In environments with uncertainty why might a purely logical approach fail?,It might lead to conclusions that are too weak for decision making|It always runs in exponential time|It requires infinite memory|It cannot use sensors
+What does a full joint probability distribution specify?,The probability of every possible atomic event in the domain|The maximum utility of all actions|The conditional independence of all variables|The path cost of the optimal search tree
+Which formula represents the inclusion-exclusion principle for probabilities?,P(A OR B) = P(A) + P(B) - P(A AND B)|P(A AND B) = P(A) * P(B)|P(A OR B) = P(A) + P(B)|P(A given B) = P(A AND B) / P(B)
+What is the mathematical definition of conditional probability P(A given B)?,P(A AND B) / P(B)|P(A OR B) / P(A)|P(A) * P(B)|P(A AND B) / P(A)
+If event A and event B are mutually exclusive what is the probability of A AND B?,0|1|P(A) * P(B)|P(A) + P(B)
+How do probabilities reflect uncertainty in Artificial Intelligence?,They represent an agent degree of belief in a proposition|They represent the absolute truth of a physical state|They are identical to fuzzy logic values|They measure the runtime of the inference algorithm
+What do we call a set of mutually exclusive and exhaustive events that cover all possibilities?,A sample space or domain|A joint distribution|A conditional domain|A utility function
+If the probability of sunny weather is 0.7 what is the probability that it is NOT sunny?,0.3|0.0|1.0|0.7
+Which rule allows us to calculate P(A AND B) as P(A given B) multiplied by P(B)?,The product rule|The addition rule|Bayes rule|The chain rule
+In the context of decision making what does utility represent?,The relative desirability or preference of a state|The execution time of an action|The probability of an event occurring|The logical entailment of a knowledge base
+What type of distribution provides the probabilities of all combinations of values for a set of random variables?,Full joint probability distribution|Marginal distribution|Prior distribution|Posterior distribution
+What is a prior probability?,The probability of an event before any evidence is considered|The probability of an event after all evidence is observed|The probability of an action being successful|The conditional probability of a state
+What is a posterior probability?,The updated probability of an event after observing evidence|The initial probability before evidence is known|The probability of a goal state in search|The utility of a specific action
+Why is calculating full joint probability distributions often impractical for real world problems?,It requires a table size that grows exponentially with the number of variables|It is logically unsound|It cannot represent continuous variables|It assumes all variables are strictly independent
