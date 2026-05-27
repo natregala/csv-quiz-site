@@ -564,19 +564,36 @@ function renderQuestion() {
             });
         });
 
-        // Keyboard shortcuts: 1–4 to select option, Ctrl+Enter to submit
+        // Keyboard shortcuts: 1–4 / arrow keys to select option, Ctrl+Enter to submit
         const mcKeyHandler = (e) => {
             // Only fire when no text input is focused
             if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') && document.activeElement.type === 'text') return;
 
             const radios = document.querySelectorAll('input[name="q"]');
 
+            // Number keys 1–4
             if (['1', '2', '3', '4'].includes(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
                 const idx = parseInt(e.key) - 1;
                 if (radios[idx]) {
                     radios[idx].checked = true;
                     userAnswers[currentQuestionIndex].answer = radios[idx].value;
                 }
+            }
+
+            // Arrow keys to cycle through options
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                const currentIdx = Array.from(radios).findIndex(r => r.checked);
+                let nextIdx;
+                if (currentIdx === -1) {
+                    nextIdx = e.key === 'ArrowDown' ? 0 : radios.length - 1;
+                } else {
+                    nextIdx = e.key === 'ArrowDown'
+                        ? (currentIdx + 1) % radios.length
+                        : (currentIdx - 1 + radios.length) % radios.length;
+                }
+                radios[nextIdx].checked = true;
+                userAnswers[currentQuestionIndex].answer = radios[nextIdx].value;
             }
 
             if (e.key === 'Enter' && e.ctrlKey) {
