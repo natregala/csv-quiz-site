@@ -875,6 +875,23 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
+// Arrow Left / Right to navigate between questions
+document.addEventListener('keydown', (e) => {
+    // Only active during a quiz
+    if (!currentQuizData.length || quizArea.style.display === 'none') return;
+    // Don't fire when typing in a text/textarea input
+    if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') && document.activeElement.type === 'text') return;
+
+    if (e.key === 'ArrowLeft' && !prevBtn.disabled) {
+        e.preventDefault();
+        prevBtn.click();
+    }
+    if (e.key === 'ArrowRight' && !nextBtn.disabled) {
+        e.preventDefault();
+        nextBtn.click();
+    }
+});
+
 // =====================
 // Home Button
 // =====================
