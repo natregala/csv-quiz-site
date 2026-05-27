@@ -1,0 +1,26 @@
+Question Text,Correct Answer
+Which of the following is an instruction for Boolean logic?,XOR|ADD|SUB|MUL
+Which flag is undefined after a Boolean operation is performed?,AF|CF|OF|ZF
+What happens when you use the OR instruction to match bits with a 1?,Sets them to 1|Clears them to 0|Inverts them|Leaves them unchanged
+In an AND operation if both matched bits are 1 what is the result?,1|0|Undefined|Negative
+Which instruction provides a way of clearing a register to zero without using an immediate value?,XOR BL BL|AND BL 00H|OR BL 00H|NOT BL
+In an OR operation what happens if either or both matched bits are 1?,The result is 1|The result is 0|The Carry Flag is set|The Zero Flag is cleared
+In an XOR operation what is the result if the matched bits differ?,1|0|Undefined|Sign bit is flipped
+What is the result of an XOR operation when the matched bits are the same?,0|1|Carry Flag is set|Parity Flag is cleared
+Which instruction sets the flags exactly like AND but does not change the bits in the target operand?,TEST|CMP|XOR|OR
+What happens to the Zero Flag if any matching bits are both 1 during a TEST instruction?,It is cleared|It is set|It becomes undefined|It is inverted
+Which instruction reverses the bits in a register or memory reversing 0s to 1s and 1s to 0s?,NOT|NEG|XOR|TEST
+How does the NOT instruction differ from the NEG instruction?,NEG performs twos complement|NOT performs twos complement|NEG only works on unsigned data|NOT adds 1 to the reversed bits
+What is the only bit difference between uppercase and lowercase letters in ASCII?,Bit 5|Bit 7|Bit 6|Bit 0
+Which operation can convert a lowercase letter to an uppercase letter by clearing bit 5?,XOR|ADD|SUB|TEST
+What is the maximum number of bits that can be shifted in a doubleword?,32 bits|16 bits|8 bits|64 bits
+Which instruction shifts logical unsigned data to the right?,SHR|SAR|SHL|SAL
+Which instruction shifts arithmetic signed data to the right while preserving the sign bit?,SAR|SHR|SHRD|SHLD
+When shifting bits to the right where does the bit shifted off go?,Carry Flag|Zero Flag|Overflow Flag|Parity Flag
+For the 8088/8086 processors if the shift value is greater than 1 which register must hold it?,CL register|AL register|BL register|DL register
+What bit does the SAR instruction use to fill the leftmost vacated bits?,The sign bit|A zero bit|A one bit|The carry bit
+Why is there no difference between left shifting unsigned and signed data using SHL and SAL?,Both always fill zero bits to the right|Both preserve the sign bit on the left|Both rotate bits into the Carry Flag|Both use the sign bit to fill vacated bits
+What mathematical operation does a left shift of one bit effectively perform?,Multiply by 2|Divide by 2|Multiply by 4|Divide by 4
+How does the RCR instruction differ from the ROR instruction?,RCR rotates through the Carry Flag|ROR rotates through the Zero Flag|RCR preserves the sign bit|ROR only works on unsigned doublewords
+Which instruction rotates logical unsigned data to the left?,ROL|RCL|ROR|RCR
+To divide a 32-bit value in DX:AX by 2 which sequence of operations is used?,SAR DX 1 followed by RCR AX 1|SHR DX 1 followed by RCL AX 1|SHL DX 1 followed by RCL AX 1|SAR AX 1 followed by RCR DX 1

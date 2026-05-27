@@ -563,6 +563,34 @@ function renderQuestion() {
                 userAnswers[currentQuestionIndex].answer = radio.value;
             });
         });
+
+        // Keyboard shortcuts: 1–4 to select option, Ctrl+Enter to submit
+        const mcKeyHandler = (e) => {
+            // Only fire when no text input is focused
+            if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') && document.activeElement.type === 'text') return;
+
+            const radios = document.querySelectorAll('input[name="q"]');
+
+            if (['1', '2', '3', '4'].includes(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                const idx = parseInt(e.key) - 1;
+                if (radios[idx]) {
+                    radios[idx].checked = true;
+                    userAnswers[currentQuestionIndex].answer = radios[idx].value;
+                }
+            }
+
+            if (e.key === 'Enter' && e.ctrlKey) {
+                e.preventDefault();
+                if (actionBtn.dataset.state === 'submit') actionBtn.click();
+            }
+        };
+        document.addEventListener('keydown', mcKeyHandler);
+        // Clean up listener when next question renders (quizContainer is replaced)
+        const observer = new MutationObserver(() => {
+            document.removeEventListener('keydown', mcKeyHandler);
+            observer.disconnect();
+        });
+        observer.observe(quizContainer, { childList: true });
     }
 
     // Save answer on input (ID)

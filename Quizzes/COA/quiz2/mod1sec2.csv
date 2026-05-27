@@ -1,0 +1,26 @@
+Question Text,Correct Answer
+Which instruction is used to execute a DOS function call?,int 21h|int 10h|int 33h|int 20h
+Before executing int 21h where must the DOS function number be placed?,AH register|AL register|DL register|DX register
+What is the main purpose of the INT instruction?,Exits program and enters a DOS routine|Allocates memory|Performs mathematical calculations|Clears the screen
+Which DOS function call is used to read a keyboard input with an echo?,01H|02H|08H|09H
+In function 01H which register holds the character read from the standard input device?,AL|AH|DL|DX
+What does function 01H do if no character is waiting to be read?,Waits until a character becomes available|Terminates the program|Returns an error code|Skips to the next instruction
+Which DOS function is used to write to the standard output device?,02H|01H|07H|0AH
+For function 02H which register must contain the character to write?,DL|AL|AH|DH
+Which function performs direct console input without echo and ignores Control-C?,07H|08H|01H|02H
+What register gets loaded with 07h to perform a direct console input without echo?,AH|AL|DL|DX
+Which DOS function reads standard input without echoing it to the standard output?,08H|01H|02H|09H
+Which function call is used to display a character string?,09H|02H|0AH|4CH
+For function 09H which registers contain the address of the string to print?,DS:DX|CS:IP|SS:SP|ES:DI
+What character must be used to terminate a string for function 09H?,$|%|#|@
+In function 09H what happens to the terminating dollar character during output?,It is not written to the output device|It is printed at the end of the string|It causes a carriage return|It triggers a system beep
+What does DOS function 0AH perform?,Buffered Keyboard Input|Display A Character String|Terminate Program|Read Keyboard with Echo
+For function 0AH what does the first byte of the input buffer structure specify?,Maximum number of characters to return|Actual number of characters returned|The terminating character|The first character typed
+What does DOS place in the second byte of the buffer for function 0AH?,Actual number of characters returned|Maximum buffer capacity|The carriage return character|The dollar sign terminator
+At which byte location do the actual entered characters begin in the function 0AH buffer?,Third byte|First byte|Second byte|Fourth byte
+Which character causes function 0AH to stop reading input?,Carriage return|Space|Dollar sign|Escape
+What happens in function 0AH when the buffer reaches one fewer than the maximum capacity?,DOS beeps for each additional character typed|DOS overwrites the first character|DOS automatically terminates the program|DOS expands the buffer size
+Which DOS function call is used to terminate a program?,4CH|4DH|01H|09H
+For function 4CH which register holds the program status code?,AL|AH|DL|DX
+What does the cx register hold in the provided sample algorithm for processing a string?,Length of the string|Address of the string|Maximum capacity of buffer|System time
+In the provided sample code what directive assigns a name to the parameter list?,label byte|maxlen db|dup|actlen db

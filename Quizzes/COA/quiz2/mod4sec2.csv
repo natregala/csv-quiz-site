@@ -1,0 +1,16 @@
+Question Text,Correct Answer
+Which INT 10H function writes both a character and a specified color attribute?,AH = 09H|AH = 0AH|AH = 0FH|AH = 02H
+What happens to the cursor automatically after writing a character with AH = 09H?,It does not advance automatically|It moves to the next line|It advances by one column|It returns to the top left corner
+For function AH = 09H which register holds the repetition count?,CX|BX|AX|DX
+In function AH = 09H which register specifies the attribute byte?,BL|BH|AL|AH
+Which function writes a character but preserves the existing screen attribute?,AH = 0AH|AH = 09H|AH = 10H|AH = 0FH
+Why is function AH = 0AH particularly useful?,For writing text into a pre-colored area without disturbing the background|For changing the screen resolution|For drawing high-resolution graphics|For moving the cursor without writing text
+Which function toggles the blinking or intensity bit of the attribute byte?,AH = 10H with AL = 03H|AH = 09H with AL = 02H|AH = 0FH with AL = 01H|AH = 0AH with AL = 00H
+What value should be placed in BL to disable blinking and enable high-intensity background?,0|1|3|7
+By default on most systems what does bit 7 of the attribute byte control?,Blinking|Foreground intensity|Background color|Screen resolution
+Disabling blinking allows for how many background colors instead of 8?,16|32|64|256
+Which function returns information about the currently active video mode?,AH = 0FH|AH = 10H|AH = 09H|AH = 0AH
+When calling AH = 0FH which register returns the number of character columns on the screen?,AH|AL|BH|BL
+When calling AH = 0FH which register holds the current active display page?,BH|AH|AL|CX
+What is a key difference between AH = 09H and AH = 0AH regarding the BL register?,AH = 09H uses BL for the attribute while AH = 0AH does not use BL|AH = 0AH uses BL for the page number while AH = 09H uses BH|AH = 09H modifies BL while AH = 0AH clears BL|Both use BL but for different repetition counts
+Which function must be manually called to reposition the cursor after using AH = 09H or AH = 0AH?,AH = 02H|AH = 0FH|AH = 10H|AH = 00H

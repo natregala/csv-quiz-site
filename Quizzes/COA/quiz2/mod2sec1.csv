@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+What type of jump is the JMP instruction?,Unconditional|Conditional|Iterative|Recursive
+What happens to the processors prefetch instruction queue when a JMP operation is executed?,It flushes the queue|It doubles the queue size|It pauses the queue|It clears the flags register
+What is the byte range for a short jump?,-128 to +127 bytes|-256 to +255 bytes|-64 to +63 bytes|-32768 to +32767 bytes
+How many bytes does the assembler generate for a short jump instruction?,Two bytes|One byte|Three bytes|Four bytes
+What register does the operand of a short jump act as an offset value for?,IP register|AX register|SP register|CX register
+What type of jump is generated if the distance exceeds the -128 to +127 byte limit but is within 32K?,Near jump|Far jump|Short jump|Segment jump
+In a forward jump why might the assembler generate a 3-byte instruction with a NOP?,It does not know if the jump is short or near|It always uses NOP for forward jumps|It needs to align memory|It clears the prefetch queue
+Which operator can force a 2-byte instruction for a forward jump if the distance is known to be short?,SHORT|NEAR|FAR|QUICK
+What instruction acts like SUB without the additional storage cycle required for execution?,CMP|DEC|JMP|LOOP
+Which instruction decrements CX by 1 and sets or clears the Zero Flag?,DEC|LOOP|CMP|JMP
+Which register does LOOP automatically decrement?,CX|AX|BX|DX
+Which type of data treats all bits as data bits without a sign indicator?,Unsigned numeric item|Signed numeric item|Floating point item|Boolean item
+For signed numeric items what does the leftmost bit value of 1 indicate?,Negative|Positive|Zero|Overflow
+Which conditional jump instruction is appropriate for unsigned data if the first operand is smaller?,JB|JL|JG|JA
+Which conditional jump instruction is appropriate for signed data if the first operand is smaller?,JL|JB|JG|JA
+Which instruction tests the contents of the CX register for zero without needing a prior arithmetic operation?,JCXZ|JZ|JE|JNZ
+The JC and JNC instructions are often used to test the success or failure of what specific operations?,Disk operations|Memory allocations|Math coprocessor tasks|Screen rendering
+Which flag does the JO instruction test?,Overflow Flag|Carry Flag|Zero Flag|Sign Flag
+Which method of passing parameters is required when passing an array?,Passing by reference|Passing by value|Passing by register|Passing by accumulator
+In DOS function 4CH which register holds the program status code?,AL|AH|CX|DX

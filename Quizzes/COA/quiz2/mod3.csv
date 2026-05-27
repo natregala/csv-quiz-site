@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+What register pair is typically assumed for string operations alongside ES:DI?,DS:SI|SS:SP|CS:IP|DX:CX
+Which prefix provides for repeated execution based on an initial count?,REP|LOOP|REPEAT|INC
+Which register holds the initial count for the REP prefix?,CX|AX|BX|DX
+What happens to the CX register when the REP prefix executes a string instruction?,It is decremented|It is incremented|It is cleared to zero|It remains unchanged
+When does the REP prefix stop repeating the operation?,When CX is 0|When ZF is 1|When ZF is 0|When CX is 1
+Which two string instructions are typically used with the standard REP prefix?,MOVS and STOS|CMPS and SCAS|LODS and SCAS|MOVS and CMPS
+What does the REPE or REPZ prefix stand for?,Repeats while equal|Repeats while empty|Repeats while end|Repeats while extra
+Which flag is checked by the REPE prefix to determine if it should continue repeating?,ZF|CF|OF|SF
+What condition causes the REPNE prefix to stop repeating an operation?,When ZF indicates equal or CX is 0|When ZF indicates not equal|When CF indicates a carry|When CX reaches maximum capacity
+Which prefix should be used to repeat an operation while the Zero Flag indicates not equal?,REPNE|REPE|REP|REPZ
+Which two string instructions are typically used with REPE and REPNE prefixes?,CMPS and SCAS|MOVS and STOS|LODS and STOS|SCAS and MOVS
+Which string instruction allows scanning a string for a specified value?,SCAS|LODS|STOS|MOVS
+Which register does SCAS compare against the memory location addressed by ES:DI?,AL or AX|BL or BX|CL or CX|DL or DX
+What flag determines whether SCAS auto-increments or auto-decrements the DI register?,DF|ZF|CF|PF
+What is the specific SCAS instruction used to scan a single byte?,SCASB|SCASW|SCASD|SCAS
+Which string instruction compares the contents of two different memory locations?,CMPS|SCAS|MOVS|LODS
+For the CMPS instruction what register pair points to the first memory location to be compared?,DS:SI|ES:DI|SS:SP|CS:IP
+Which specific instruction form is used by CMPS to compare two words?,CMPSW|CMPSB|CMPSD|CMPW
+In the provided SCAS example which instruction is used to clear the direction flag before the scan begins?,cld|std|cli|sti
+In the provided CMPS example which conditional jump is used to branch if the two strings are not equal?,jne|je|jz|jmp

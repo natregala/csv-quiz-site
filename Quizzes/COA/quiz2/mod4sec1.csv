@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+Which interrupt provides video services in the BIOS?,INT 10H|INT 21H|INT 16H|INT 33H
+What is the default video page for text mode video memory?,Page 0|Page 1|Page 3|Page 7
+In the attribute byte which bit sets the blinking feature?,Bit 7|Bit 3|Bit 0|Bit 4
+Which bit in the attribute byte controls high intensity?,Bit 3|Bit 7|Bit 6|Bit 0
+How many bits are used to determine the character foreground color in the attribute byte?,4 bits|3 bits|2 bits|1 bit
+What happens if the background and foreground colors are identical?,The displayed character is invisible|The character blinks automatically|The system defaults to black and white|An error is generated
+According to the Four-Bit Color Text Encoding what color does the binary value 0100 represent?,red|blue|green|cyan
+What color is represented by the 4-bit binary value 1111?,white|black|light gray|yellow
+Which register must hold the function number when calling BIOS INT 10H operations?,AH register|AL register|BH register|CX register
+Which INT 10H function is used to set the video mode?,00h|01h|02h|0Fh
+When setting the video mode using Function 00h what happens by default?,The screen is cleared automatically|The current cursor position is saved|The color palette is inverted|Blinking is disabled
+How can a programmer prevent the screen from clearing when setting the video mode with Function 00h?,By setting the high bit in the AL register|By clearing the AH register|By setting the DH register to zero|By changing the BH register to one
+Which INT 10H function is used to set the cursor position?,02h|01h|03h|06h
+For setting the cursor position with Function 02h which registers hold the row and column values?,DH and DL|CH and CL|AH and AL|BH and BL
+What is the text mode resolution for Video Mode 03?,720 x 400|360 x 400|640 x 480|800 x 600
+Which INT 10H function reads a character and its attribute from the screen?,08h|09h|0Ah|0Fh
+Which function code would you place in the AH register to scroll the window up?,06h|07h|08h|01h
+For INT 10h Function 01h which registers determine the top and bottom lines of the cursor?,CH and CL|DH and DL|AH and AL|BH and BL
+How many lines does a monochrome display use for its cursor by default?,12 lines|8 lines|16 lines|4 lines
+Which video mode provides a monochrome display with a resolution of 720 x 400?,07|03|01|00

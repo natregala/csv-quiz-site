@@ -1,0 +1,11 @@
+Question Text,Correct Answer
+"Read a character from the keyboard with echo using INT 21H.\nMOV AH ___\nINT 21H","01H"
+"Display the character stored in DL using DOS function call.\nMOV AH ___\nINT 21H","02H"
+"Read a character without echo and without Control C checking.\nMOV AH ___\nINT 21H","07H"
+"Read a character from standard input without echo.\nMOV AH ___\nINT 21H","08H"
+"Display a string terminated by dollar sign using INT 21H.\nMOV AH ___\nLEA DX str1\nINT 21H","09H"
+"Terminate the program with status code 00H.\nMOV AH ___\nMOV AL 00H\nINT 21H","4CH"
+"Prepare the buffer for buffered keyboard input of size 10.\nlist DB ___ ___ ___ DUP('$')","10|?|10"
+"Use buffered keyboard input to read a string from the keyboard.\nMOV AH ___\nLEA DX list\nINT 21H","0AH"
+"Complete the code to display the string using DOS interrupt.\nMOV AX @DATA\nMOV DS AX\nMOV AH ___\nLEA DX str1\nINT ___","09H|21H"
+"Complete the program based on the algorithm steps.\n.MODEL SMALL\n.STACK 100H\n.DATA\nprompt db 'Enter a string: $'\nparlist label byte\nmaxlen db 80\nactlen db ?\nstr1 db 80 dup(' ')\n.CODE\nSTART:\nMOV AX @DATA\nMOV DS AX\n; Step 1\nMOV AH ___\nLEA DX prompt\nINT 21H\n; Step 2\nMOV AH ___\nLEA DX parlist\nINT 21H\n; Step 3\nMOV CL ___\nMOV CH 0\n; Step 4\nLEA ___ str1\nLOOP_CHAR:\n; Step 5\nMOV AH 02H\nMOV DL ___\nINT 21H\n; Step 6\nMOV DL ___\nINT 21H\n; Step 7\nINC ___\n; Step 8\nLOOP ___\nMOV AX 4C00H\nINT 21H\nEND START","09H|0AH|actlen|BX|[BX]|' '|BX|LOOP_CHAR"
