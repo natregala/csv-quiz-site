@@ -1,0 +1,9 @@
+Question Text,Correct Answer
+"Capitalize first word of a lowercase string\nLODSB loads [SI] into AL; STOSB stores AL into [DI]\nSUB AL,20 converts lowercase to uppercase\n\nPROCESS: LODSB\n___\nJE DONE\n___\nSTOSB\n___","CMP AL,' '|SUB AL,20|LOOP PROCESS"
+"Extract last word: point SI to last char then scan backward\nSTD sets direction flag so SI decrements after LODSB\nCX = actlen (string length); BX = loop counter\n\nLEA SI,str1\n___\nDEC SI\n___\nMOV BX,CX\nSCAN_BACK: LODSB\n___\nJE FOUND_SPACE\n___\nJNZ SCAN_BACK","ADD SI,CX|STD|CMP AL,' '|DEC BX"
+"Email generator: copy first initial,skip to middle name,copy middle initial\nLODSB loads next char; STOSB stores char to destination\n\nLODSB\n___\nSKIP1: LODSB\n___\nJNE SKIP1\n___\nSTOSB","STOSB|CMP AL,' '|LODSB"
+"Compare str1 and str2; if equal,fill str3 with '&'\nREPE CMPSB compares CX bytes at DS:[SI] vs ES:[DI]\nREP STOSB fills CX bytes at ES:[DI] with AL\n\nLEA SI,str1\n___\nREPE CMPSB\n___\nMOV CX,strlen\n___\nLEA DI,str3\n___\nNOT_EQUAL:","LEA DI,str2|JNE NOT_EQUAL|MOV AL,'&'|REP STOSB"
+"Replace every occurrence of charvar with '#'\ncharvar holds the target character to find and replace\n\nPROCESS: LODSB\n___\nJNE KEEP\n___\nKEEP: STOSB\n___","CMP AL,charvar|MOV AL,'#'|LOOP PROCESS"
+"Top band (rows 0-7) red background using INT 10H AH=6\nBH=attribute (47=white on red),CH/CL=top-left,DH/DL=bottom-right\n\n___\nMOV AL,0\n___\nMOV CH,0\n___\nMOV DH,7\n___\nINT 10H","MOV AH,6|MOV BH,47|MOV CL,0|MOV DL,79"
+"Write blinking name at screen center using INT 10H AH=9\nBL=attribute (8F=blinking white on black),CX=number of times to write char\n\nMOV AL,[SI]\n___\nMOV BH,0\n___\nPUSH CX\n___\nINT 10H\n___","MOV AH,9|MOV BL,8F|MOV CX,1|POP CX"
+"Middle band (cols 27-53) green background for vertical color screen\nBH=attribute (27=white on green),CH/CL=top-left,DH/DL=bottom-right\n\n___\nMOV AL,0\n___\nMOV CH,0\n___\nMOV DH,24\n___\nINT 10H","MOV AH,6|MOV BH,27|MOV CL,27|MOV DL,53"

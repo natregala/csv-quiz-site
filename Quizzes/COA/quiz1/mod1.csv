@@ -1,0 +1,21 @@
+Question Text,Correct Answer
+Which rule applies to register addressing transfers?,Segment to segment transfer is not allowed|Registers can be of different sizes|The second operand is always the destination|Only segment registers are allowed
+What is a requirement for registers involved in a register addressing operation?,They must be of the same size|They must be different sizes|One must always be a segment register|They must both be index registers
+How must a hexadecimal value be identified in immediate addressing?,By appending an H to the end|By appending a B to the end|By leaving it without any suffix|By prepending an X to the beginning
+What suffix is used to identify decimal values in immediate addressing?,No suffix is needed|An H is appended|A D is appended|A B is appended
+In which addressing mode is the offset address directly given in the instruction as displacement?,Direct Addressing|Register Addressing|Immediate Addressing|Register Indirect Addressing
+What is the default segment when using an address as an operand in direct addressing?,DS|SS|CS|ES
+Which register addresses memory in the Stack Segment during register indirect addressing?,BP|BX|SI|DI
+Which registers address memory in the Data Segment during register indirect addressing?,BX SI DI|BP SP IP|AX BX CX|CS DS ES
+What is a common use case for indirect addressing?,Referring to tabular data in memory|Adding two constant values|Addressing elements in a 2-dimensional array|Transferring data between two segment registers
+Which registers are considered base registers in base-plus-index addressing?,BP or BX|DI or SI|AX or CX|CS or DS
+Which registers act as index registers in base-plus-index addressing?,DI or SI|BP or BX|AX or DX|SP or IP
+What is the major use of base-plus-index addressing?,To address elements in an array of data|To transfer data between two segment registers|To load an immediate value into a register|To address a file containing multiple records
+Which mode transfers data between a register and memory addressed by a register and a displacement?,Register Relative Addressing|Immediate Addressing|Register Addressing|Direct Addressing
+Which addressing mode is commonly used to address a two-dimensional array?,Base Relative-plus-Index Addressing|Direct Addressing|Register Addressing|Immediate Addressing
+Base Relative-plus-Index Addressing can be used to address what kind of data structure?,A file that contains multiple records|A single byte in an isolated register|An immediate hexadecimal value|A segment register transfer
+Which addressing mode is used in the instruction MOV AL BL assuming a space replaces the delimiter?,Register Addressing|Immediate Addressing|Direct Addressing|Register Indirect Addressing
+Which addressing mode is used in the instruction MOV CL 12 assuming a space replaces the delimiter?,Immediate Addressing|Direct Addressing|Register Addressing|Base-plus-index addressing
+Which addressing mode is used in the instruction MOV AL [BX] assuming a space replaces the delimiter?,Register Indirect Addressing|Register Relative Addressing|Base-plus-index addressing|Direct Addressing
+Which addressing mode is used in the instruction MOV BL [BP+3] assuming a space replaces the delimiter?,Register Relative Addressing|Base Relative-plus-Index Addressing|Base-plus-index addressing|Direct Addressing
+Which addressing mode is used in the instruction MOV AL list[BP+DI] assuming spaces replace the delimiters?,Base Relative-plus-Index Addressing|Base-plus-index addressing|Register Relative Addressing|Register Indirect Addressing

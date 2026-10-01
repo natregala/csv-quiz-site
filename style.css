@@ -542,7 +542,7 @@ input[type="radio"] {
 /* Inline blank input embedded in the question sentence */
 .fitb-inline-input {
     display: inline-block;
-    width: 110px;
+    width: 200px;
     padding: 4px 8px;
     border: none;
     border-bottom: 3px solid #f0ad4e;
@@ -604,7 +604,7 @@ input[type="radio"] {
 .fitb-inline-input--code {
     font-family: 'Courier New', Consolas, 'Fira Code', monospace;
     font-size: 0.9em;
-    width: 130px;
+    width: 300px;
     background: #313244;
     color: #a6e3a1;
     border-bottom-color: #a6e3a1;

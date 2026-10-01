@@ -21,8 +21,8 @@ function levenshtein(a, b) {
 let currentQuizData = [];
 let currentQuestionIndex = 0;
 let score = 0;
-let quizType = 'mc'; // 'mc' for multiple choice, 'id' for identification, 'fitb' for fill in the blanks
-let difficulty = 'easy'; // easy=3, medium=2, hard=1, extreme=0
+let quizType = 'mixed'; // 'mc' for multiple choice, 'id' for identification, 'fitb' for fill in the blanks
+let difficulty = 'hard'; // easy=3, medium=2, hard=1, extreme=0
 const DIFFICULTY_THRESHOLD = { easy: 3, medium: 2, hard: 1, extreme: 0 };
 let userAnswers = []; // Store answers for each question: { answer: 'A' or string, submitted: bool }
 let shuffledChoices = []; // Store shuffled choices per question so they stay consistent
@@ -66,11 +66,11 @@ const typeTFLabel = document.getElementById('type-tf-label');
 const typeMixedLabel = document.getElementById('type-mixed-label');
 
 // Placeholders for each quiz type
-const MC_PLACEHOLDER = "Question Text,Correct Answer\nWhat is the chemical symbol for Gold?,Au|Ag|Gd|Go\nWhich planet is known as the Red Planet?,Mars|Venus|Jupiter|Saturn";
-const ID_PLACEHOLDER = "Question Text,Correct Answer\nWhat is the chemical symbol for Gold?,Au\nWhat planet is known as the Red Planet?,Mars";
-const FITB_PLACEHOLDER = "Question Text,Correct Answer\nThe ___ is the powerhouse of the cell.,mitochondria\nThe sky is ___ and the grass is ___.,blue|green\ndef greet():\n    return ___ + \"world\",\"Hello, \"";
-const TF_PLACEHOLDER = "Question Text,Correct Answer\nThe sky is blue.,True\nThe earth is flat.,False";
-const MIXED_PLACEHOLDER = "Question Text,Correct Answer\nWhat is the chemical symbol for Gold?,Au|Ag|Gd|Go\nThe earth is flat.,False\nWhat planet is known as the Red Planet?,Mars\nThe ___ is the powerhouse of the cell.,mitochondria";
+const MC_PLACEHOLDER = 'Question Text,Correct Answer\n"What is the chemical symbol for Gold?","Au|Ag|Gd|Go"\n"Which planet is known as the Red Planet?","Mars|Venus|Jupiter|Saturn"';
+const ID_PLACEHOLDER = 'Question Text,Correct Answer\n"What is the chemical symbol for Gold?","Au"\n"What planet is known as the Red Planet?","Mars"';
+const FITB_PLACEHOLDER = 'Question Text,Correct Answer\n"The ___ is the powerhouse of the cell.","mitochondria"\n"The sky is ___ and the grass is ___.","blue|green"\n"def greet():\\n    return ___ + ""world""","Hello, "';
+const TF_PLACEHOLDER = 'Question Text,Correct Answer\n"The sky is blue.","True"\n"The earth is flat.","False"';
+const MIXED_PLACEHOLDER = 'Question Text,Correct Answer\n"What is the chemical symbol for Gold?","Au|Ag|Gd|Go"\n"The earth is flat.","False"\n"What planet is known as the Red Planet?","Mars"\n"The ___ is the powerhouse of the cell.","mitochondria"';
 
 function getQType(q) {
     if (quizType !== 'mixed') return quizType;
@@ -457,7 +457,7 @@ function renderQuestion() {
         `;
     } else if (qType === 'fitb') {
         // --- Fill in the Blanks (supports multiple blanks via | separator, and \n for code) ---
-        const correctAnswers = q['Correct Answer'].split('|').map(a => a.trim());
+        const correctAnswers = q['Correct Answer'].split('|').map(a => a.trim().replace(/^(["'])(.*?)\1$/, '$2'));
         const savedAnswers = Array.isArray(state.answer) ? state.answer : correctAnswers.map(() => '');
         const disabled = state.submitted ? 'disabled' : '';
 
@@ -549,9 +549,23 @@ function renderQuestion() {
     if (qType === 'fitb' && !state.submitted) {
         const firstBlank = document.getElementById('fitb-blank-0');
         if (firstBlank) firstBlank.focus();
-        document.querySelectorAll('.fitb-inline-input').forEach(input => {
+        const fitbInputs = Array.from(document.querySelectorAll('.fitb-inline-input'));
+        fitbInputs.forEach((input, idx) => {
             input.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' && actionBtn.dataset.state === 'submit') actionBtn.click();
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (e.ctrlKey) {
+                        // Ctrl+Enter: submit from anywhere
+                        if (actionBtn.dataset.state === 'submit') {
+                            actionBtn._fitbSubmit = true;
+                            actionBtn.click();
+                        }
+                    } else {
+                        // Plain Enter: advance to next blank only, no submit
+                        const next = fitbInputs[idx + 1];
+                        if (next) next.focus();
+                    }
+                }
             });
         });
     }
@@ -666,7 +680,19 @@ function renderFITBFeedback(feedbackDiv, blankResults) {
     }
 }
 
-actionBtn.addEventListener('click', () => {
+actionBtn.addEventListener('keydown', (e) => {
+    // Prevent Enter from triggering the button while typing in a FITB blank
+    if (e.key === 'Enter' && document.activeElement && document.activeElement.classList.contains('fitb-inline-input')) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+});
+
+actionBtn.addEventListener('click', (e) => {
+    // If a FITB blank is focused and this is NOT our own Ctrl+Enter click, ignore it
+    if (document.activeElement && document.activeElement.classList.contains('fitb-inline-input') && !actionBtn._fitbSubmit) return;
+    actionBtn._fitbSubmit = false;
+
     const q = currentQuizData[currentQuestionIndex];
     const feedbackDiv = document.getElementById('feedback');
     const state = userAnswers[currentQuestionIndex];
@@ -689,7 +715,7 @@ actionBtn.addEventListener('click', () => {
 
         } else if (qType === 'fitb') {
             // --- Fill in the Blanks (multi-blank) ---
-            const correctAnswers = q['Correct Answer'].split('|').map(a => a.trim());
+            const correctAnswers = q['Correct Answer'].split('|').map(a => a.trim().replace(/^(["'])(.*?)\1$/, '$2'));
             const blankInputs = document.querySelectorAll('.fitb-inline-input');
             const userAnswers_arr = Array.from(blankInputs).map(inp => inp.value.trim());
 

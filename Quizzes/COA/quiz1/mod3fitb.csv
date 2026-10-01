@@ -3,7 +3,7 @@ Define an uninitialized single byte named VAR02.\n___,VAR02 DB ?
 Define a 5-byte string named STR01 containing hello.\n___,STR01 DB 'hello'
 Allocate 4 uninitialized bytes named ARR02 using DUP.\n___,ARR02 DB 4 DUP(?)
 Allocate 4 words all initialized to zero named ARR03.\n___,ARR03 DW 4 DUP(0)
-Define a 16-bit counter named COUNTER starting at 0.\n___,COUNTER DW 0
+Define a 16-bit counter named COUNTER starting at 0.\n___,COUNTER DB 0
 Define a 32-bit far pointer named FARPTR leaving it uninitialized.\n___,FARPTR DD ?
 Define a doubleword integer BIGNUM initialized to hex 12345678.\n___,BIGNUM DD 12345678H
 Assign the symbolic name COUNT to the value 12.\n___,COUNT EQU 12
@@ -38,3 +38,4 @@ Push flags then push AX then pop AX then pop flags.\n___\n___\n___\n___,PUSHF|PU
 Load a byte into AL then store it into memory via ES:DI manually.\n___\n___,LODSB|STOSB
 Define the screen width as 80 and height as 25 using Equate.\n___\n___,COLS EQU 80|ROWS EQU 25
 At label L20: Load string byte then increment DI manually then loop to L20.\nL20:\n___\n___\n___,LODSB|INC DI|LOOP L20
+"5 CHAR STRING DATA TRANSFER \n.MODEL SMALL\n.STACK 100H\n.DATA\n    SRC_PTR DD 07000100H\n    DST_PTR DD 08000200H\n.CODE\nMAIN PROC\n    MOV AX, @DATA\n    MOV DS, AX\n    ___ DI, DST_PTR\n    ___ SI, SRC_PTR\n    MOV CX, ___\n    ___\n    REP ___\n    MOV AH, 4CH\n    INT 21H\nMAIN ENDP\nEND MAIN","LES|LDS|5|CLD|MOVSB"

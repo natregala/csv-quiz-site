@@ -19,8 +19,8 @@
         <div class="input-section" id="type-section">
             <label><strong>Select Quiz Type:</strong></label>
             <div class="quiz-type-selector">
-                <label class="type-option selected" id="type-mc-label">
-                    <input type="radio" name="quiz-type" value="mc" checked> Multiple Choice
+                <label class="type-option" id="type-mc-label">
+                    <input type="radio" name="quiz-type" value="mc"> Multiple Choice
                 </label>
                 <label class="type-option" id="type-id-label">
                     <input type="radio" name="quiz-type" value="id"> Identification
@@ -31,17 +31,17 @@
                 <label class="type-option" id="type-tf-label">
                     <input type="radio" name="quiz-type" value="tf"> True or False
                 </label>
-                <label class="type-option" id="type-mixed-label">
-                    <input type="radio" name="quiz-type" value="mixed"> Mixed
+                <label class="type-option selected" id="type-mixed-label">
+                    <input type="radio" name="quiz-type" value="mixed" checked> Mixed
                 </label>
             </div>
         </div>
 
-        <div class="input-section" id="difficulty-section" style="display: none;">
+        <div class="input-section" id="difficulty-section">
             <label><strong>Select Difficulty:</strong></label>
             <div class="difficulty-selector">
-                <label class="diff-option selected" data-diff="easy">
-                    <input type="radio" name="difficulty" value="easy" checked>
+                <label class="diff-option" data-diff="easy">
+                    <input type="radio" name="difficulty" value="easy">
                     <span class="diff-label">😊 Easy</span>
                     <span class="diff-desc">3 wrong chars allowed</span>
                 </label>
@@ -50,8 +50,8 @@
                     <span class="diff-label">🤔 Medium</span>
                     <span class="diff-desc">2 wrong chars allowed</span>
                 </label>
-                <label class="diff-option" data-diff="hard">
-                    <input type="radio" name="difficulty" value="hard">
+                <label class="diff-option selected" data-diff="hard">
+                    <input type="radio" name="difficulty" value="hard" checked>
                     <span class="diff-label">😰 Hard</span>
                     <span class="diff-desc">1 wrong char allowed</span>
                 </label>
@@ -78,7 +78,7 @@
                 </button>
             </div>
             <textarea id="csv-text" rows="8"
-                placeholder="Question Text,Correct Answer&#10;What is the chemical symbol for Gold?,Au|Ag|Gd|Go&#10;Which planet is known as the Red Planet?,Mars|Venus|Jupiter|Saturn"></textarea>
+                placeholder="Question Text,Correct Answer&#10;&quot;What is the chemical symbol for Gold?&quot;,&quot;Au|Ag|Gd|Go&quot;&#10;&quot;Which planet is known as the Red Planet?&quot;,&quot;Mars|Venus|Jupiter|Saturn&quot;"></textarea>
             <div style="display: flex; gap: 10px;">
                 <button type="button" id="save-csv-btn" style="flex: 1; background-color: #28a745;">Save Quiz</button>
                 <button type="button" id="generate-btn" style="flex: 1;">Generate Quiz</button>
@@ -96,12 +96,12 @@ Format the output strictly as a raw CSV file with these exact headers:
 Question Text,Correct Answer
 
 - The "Correct Answer" column must contain all choices separated by | (pipe). The FIRST value must always be the correct answer, followed by 3 plausible wrong choices.
-- CRITICAL: Do NOT use commas (,) anywhere in the questions or answers to avoid breaking the CSV format.
+- CRITICAL: Enclose all questions and answers in double quotes ("") so commas can be safely used inside them.
 - For each question, start a new line.
 
 Example:
-What is the chemical symbol for Gold?,Au|Ag|Gd|Go
-Which planet is known as the Red Planet?,Mars|Venus|Jupiter|Saturn
+"What is the chemical symbol for Gold?","Au|Ag|Gd|Go"
+"Which planet is known as the Red Planet?","Mars|Venus|Jupiter|Saturn"
 
 Ensure there are no markdown formatting blocks, no extra spaces, and no other text before or after the CSV output.</code>
                 <code id="ai-prompt-id"
@@ -111,7 +111,7 @@ Format the output strictly as a raw CSV file with these exact headers:
 Question Text,Correct Answer
 
 - Each "Correct Answer" should be a short word or phrase.
-- CRITICAL: Do NOT use commas (,) anywhere in the questions or answers to avoid breaking the CSV format.
+- CRITICAL: Enclose all questions and answers in double quotes ("") so commas can be safely used inside them.
 - For each question, start a new line.
 
 Ensure there are no markdown formatting blocks, no extra spaces, and no other text before or after the CSV output.</code>
@@ -126,13 +126,13 @@ Rules:
 - For code-style questions, use \n (backslash + n) inside the question text to insert a line break. The question will be displayed in a monospace code block.
 
 Examples (plain):
-  The ___ is the powerhouse of the cell.,mitochondria
-  The sky is ___ and the grass is ___.,blue|green
+  "The ___ is the powerhouse of the cell.","mitochondria"
+  "The sky is ___, and the grass is ___.","blue|green"
 
 Example (code with line breaks — use \n for newlines):
-  def greet():\n    return ___ + "world","Hello "
+  "def greet():\n    return ___ + ""world""","Hello, "
 
-- CRITICAL: Do NOT use commas (,) anywhere in the questions or answers to avoid breaking the CSV format.
+- CRITICAL: Enclose all questions and answers in double quotes ("") so commas can be safely used inside them. If a question already contains quotes, escape them by doubling them ("").
 - For each question, start a new line.
 
 Ensure there are no markdown formatting blocks and no other text before or after the CSV output.</code>
@@ -143,12 +143,12 @@ Format the output strictly as a raw CSV file with these exact headers:
 Question Text,Correct Answer
 
 - The "Correct Answer" must be exactly "True" or "False".
-- CRITICAL: Do NOT use commas (,) anywhere in the questions or answers to avoid breaking the CSV format.
+- CRITICAL: Enclose all questions and answers in double quotes ("") so commas can be safely used inside them.
 - For each question, start a new line.
 
 Example:
-The sky is blue.,True
-The earth is flat.,False
+"The sky, on a clear day, is blue.","True"
+"The earth is flat.","False"
 
 Ensure there are no markdown formatting blocks, no extra spaces, and no other text before or after the CSV output.</code>
                 <code id="ai-prompt-mixed" style="display:none;">Create 20 questions about [INSERT TOPIC] using a mix of Multiple Choice, True or False, Identification, and Fill-in-the-Blank styles.
@@ -161,26 +161,26 @@ CRITICAL formatting rules for each question type to ensure proper parsing:
 1. MULTIPLE CHOICE:
 - The "Question Text" MUST NOT contain any blanks (___).
 - The "Correct Answer" column MUST contain the correct answer FIRST, followed by 3 plausible wrong options, all separated by the pipe character (|).
-- Example: What is the chemical symbol for Gold?,Au|Ag|Gd|Go
+- Example: "What is the chemical symbol for Gold?","Au|Ag|Gd|Go"
 
 2. TRUE OR FALSE:
 - The "Correct Answer" must be exactly "True" or "False".
-- Example: The earth is flat.,False
+- Example: "The earth is flat.","False"
 
 3. FILL-IN-THE-BLANKS:
 - The "Question Text" MUST contain ___ (three underscores) where a word/phrase should be filled in.
 - The "Correct Answer" column must contain the answers for the blanks in order. If there are multiple blanks in one question, separate the answers using the pipe character (|).
-- Example 1 (Single): The ___ is the powerhouse of the cell.,mitochondria
-- Example 2 (Multiple): The sky is ___ and the grass is ___.,blue|green
+- Example 1 (Single): "The ___ is the powerhouse of the cell.","mitochondria"
+- Example 2 (Multiple): "The sky is ___, and the grass is ___.","blue|green"
 - Optional: For code blocks, use \n to represent line breaks inside the Question Text.
 
 4. IDENTIFICATION:
 - The "Question Text" MUST NOT contain any blanks (___).
 - The "Correct Answer" MUST NOT contain any pipe characters (|). It should be a single short word or phrase.
-- Example: What planet is known as the Red Planet?,Mars
+- Example: "What planet is known as the Red Planet?","Mars"
 
 GENERAL RULES:
-- CRITICAL: Do NOT use commas (,) anywhere in the questions or answers to avoid breaking the CSV format.
+- CRITICAL: Enclose all questions and answers in double quotes ("") so commas can be safely used inside them.
 - Start a new line for each question.
 - Do NOT wrap the output in markdown formatting blocks like \`\`\`csv or \`\`\`.
 - Output ONLY the raw CSV text, with no introductory or concluding sentences.</code>

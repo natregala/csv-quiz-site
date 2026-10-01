@@ -29,7 +29,6 @@ The POP CS instruction is completely legal and frequently used to change the cod
 The first operand in a MOV instruction specifies the source where the data comes from.,False
 "What string instruction does not require an intermediate register to copy data directly from one memory area to another?",MOVS|MOVSB|MOVSW|MOVS BYTE1 BYTE2
 "When executing REP MOVSB the loop stops immediately if the CX register evaluates to ___.",0|zero
-"A memory-to-memory transfer using MOV requires two instructions because the 8088 bus can only perform one memory access per bus cycle.",True
 What is the primary function of the XCHG instruction?,To swap the contents of two operands.|To clear the contents of a register.|To load an effective address.|To push data onto the stack.
 "If the Direction Flag is set (D = 1) what happens to the SI and DI registers after a string operation?",They auto-decrement.
 "Which instruction clears the Direction Flag setting it to 0 for auto-increment operations?",CLD
@@ -39,3 +38,34 @@ It is considered good practice to always use byte transfers (STOSB) instead of w
 "The top of the stack is always located at the memory address determined by combining the Stack Segment (SS) and the ___.",Stack Pointer|SP
 "The LES instruction is particularly useful for loading a pointer before using string instructions like STOS or MOVS.",True
 "What happens to the CX register during each repetition of a string instruction prefixed with REP?", decremented by 1
+"The instruction ___ destination source copies data from a source to a destination.",MOV
+A memory-to-memory data transfer using a single MOV instruction is perfectly legal.,False
+What instruction atomically swaps the contents of two operands without needing a temporary register?,XCHG
+"The instruction ___ loads the offset address of a memory location into a register.",LEA
+What is the primary difference between LDS and LES?,LDS uses the DS register while LES uses the ES register|LDS is for strings while LES is for math|LDS uses 16 bits while LES uses 32 bits|LDS loads an offset while LES loads a value
+The LEA instruction requires 4 clock cycles while MOV OFFSET requires 8 clock cycles.,False
+What register keeps track of the top of the stack alongside the Stack Segment register?,SP
+The stack in 8088 assembly operates on a ___ principle.,LIFO
+What happens to the Stack Pointer when a PUSH instruction is executed?,It decreases by 2|It increases by 2|It decreases by 1|It increases by 1
+It is entirely valid to execute a POP CS instruction.,False
+What instruction pushes the flags register onto the stack?,PUSHF
+To properly restore registers pushed in the order AX BX CX you must POP them in the order ___ ___ ___.,CX|BX|AX
+What does the Direction Flag control in string operations?,Whether SI and DI auto-increment or auto-decrement|Whether strings are read from memory or disk|Whether upper case letters are converted to lower case|Whether the operation uses 8-bit or 16-bit registers
+The STD instruction clears the direction flag making string operations move forward through memory.,False
+What instruction sets the direction flag to 1 causing auto-decrement?,STD
+The ___ prefix causes a string instruction to repeat automatically until CX reaches zero.,REP
+Which register is decremented automatically when the REP prefix is used?,CX|AX|BX|DX
+The LODS instruction loads data from DS:SI into the ___ or ___ register.,AL|AX
+The STOS instruction stores the contents of AL or AX into memory at DS:DI.,False
+Which string instruction copies data directly from one memory area to another?,MOVS
+After a MOVSW instruction is executed with D=0 how much are SI and DI adjusted?,+2|+1|-1|-2
+To clear 10 bytes of memory faster using REP STOSW you should set CX to ___.,5
+Which string instruction is the ONLY practical way to do a direct memory-to-memory transfer in 8088 assembly?,MOVS|MOV|XCHG|LODS
+You can override the Extra Segment for the destination in a MOVS instruction.,False
+What register holds the destination offset for STOS and MOVS operations?,DI
+The instruction XCHG AX BX swaps registers and requires ___ byte(s) of opcode.,1
+If you PUSH a register onto the stack which byte is stored at the higher memory address?,The high byte|The low byte|Both bytes simultaneously|Neither byte
+The source operand is never modified during a MOV instruction.,True
+What is the main advantage of using string instructions over manual loops with MOV?,They require far fewer instructions per byte transferred|They do not require the direction flag|They do not use the CX register|They automatically allocate memory
+The code \nCOPY: MOV AL [SI]\nMOV [DI] AL\nINC SI\nINC DI\nLOOP COPY\nachieves the exact same result as the single instruction ___ ___.,REP|MOVSB
+What instruction clears the direction flag?,CLD

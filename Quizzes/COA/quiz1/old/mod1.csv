@@ -1,0 +1,9 @@
+Question Text,Correct Answer
+"The 8088 processor stores multi-byte values in ___ format, meaning the least significant byte is stored at the lower address.",little-endian
+The 8088 architecture stores multi-byte values using big-endian format.,False
+In little-endian format which byte is stored at the lower address?,Least significant byte
+How many bits is the maximum register size for the 8088 processor described in the text?,16 bits|8 bits|32 bits|64 bits
+What 8088 hardware limitation prevents direct memory-to-memory MOV instructions?,Bus cycle
+"A memory-to-memory transfer using MOV requires two instructions because the 8088 bus can only perform one memory access per bus cycle.",True
+To work with a 32-bit number in a 16-bit architecture you must split it into a ___ word and a ___ word.,LOW|HIGH
+All number values in the provided text are in ___ form unless stated otherwise.,HEXADECIMAL
