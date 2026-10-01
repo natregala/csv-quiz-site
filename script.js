@@ -26,6 +26,7 @@ let difficulty = 'hard'; // easy=3, medium=2, hard=1, extreme=0
 const DIFFICULTY_THRESHOLD = { easy: 3, medium: 2, hard: 1, extreme: 0 };
 let userAnswers = []; // Store answers for each question: { answer: 'A' or string, submitted: bool }
 let shuffledChoices = []; // Store shuffled choices per question so they stay consistent
+let shuffleQuestions = true; // Whether to randomize question order
 
 // --- DOM Elements ---
 const generateBtn = document.getElementById('generate-btn');
@@ -49,7 +50,21 @@ const promptSection = document.querySelector('.prompt-section');
 const inputSection = document.getElementById('input-section');
 const typeSection = document.getElementById('type-section');
 const difficultySection = document.getElementById('difficulty-section');
+const orderSection = document.getElementById('order-section');
 const newQuizBtn = document.getElementById('new-quiz-btn');
+
+// Question order toggle
+const orderRadios = document.querySelectorAll('input[name="question-order"]');
+const orderShuffleLabel = document.getElementById('order-shuffle-label');
+const orderInOrderLabel = document.getElementById('order-inorder-label');
+
+orderRadios.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+        shuffleQuestions = e.target.value === 'shuffle';
+        orderShuffleLabel.classList.toggle('selected', shuffleQuestions);
+        orderInOrderLabel.classList.toggle('selected', !shuffleQuestions);
+    });
+});
 
 // Navigation elements
 const prevBtn = document.getElementById('prev-btn');
@@ -311,10 +326,12 @@ function startQuiz(csvDataString) {
         complete: function (results) {
             currentQuizData = results.data;
 
-            // Shuffle the questions randomly
-            for (let i = currentQuizData.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [currentQuizData[i], currentQuizData[j]] = [currentQuizData[j], currentQuizData[i]];
+            // Shuffle the questions randomly (if enabled)
+            if (shuffleQuestions) {
+                for (let i = currentQuizData.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [currentQuizData[i], currentQuizData[j]] = [currentQuizData[j], currentQuizData[i]];
+                }
             }
 
             currentQuestionIndex = 0;
@@ -347,6 +364,7 @@ function startQuiz(csvDataString) {
             inputSection.style.display = 'none';
             typeSection.style.display = 'none';
             difficultySection.style.display = 'none';
+            orderSection.style.display = 'none';
             quizArea.style.display = 'block';
             newQuizBtn.style.display = 'none';
 
@@ -942,6 +960,7 @@ function goHome() {
     inputSection.style.display = 'block';
     typeSection.style.display = 'block';
     difficultySection.style.display = (quizType === 'id' || quizType === 'fitb' || quizType === 'mixed') ? 'block' : 'none';
+    orderSection.style.display = 'block';
 
     // Hide quiz
     quizArea.style.display = 'none';
